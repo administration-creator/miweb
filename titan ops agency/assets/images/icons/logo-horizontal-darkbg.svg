@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500">
-  <rect x="0" y="0" width="1600" height="500" fill="#0B1220"/>
-  <rect x="40" y="40" rx="60" ry="60" width="300" height="300" fill="#0B1220" stroke="#ffffff" stroke-width="4"/>
-  <text x="190" y="245" text-anchor="middle" fill="#ffffff" font-size="220" font-family="sans-serif" font-weight="700">T</text>
-  <text x="420" y="285" fill="#ffffff" font-size="170" font-family="sans-serif" font-weight="700">Titan</text>
-  <text x="820" y="285" fill="#4cc9f0" font-size="170" font-family="sans-serif" font-weight="700">Ops</text>
-</svg>
