@@ -221,5 +221,58 @@ nav a{ color:var(--txt); opacity:.9; }
   /* Botones un poco más cómodos en móvil */
   .btn { padding: 12px 16px; font-size: 16px; }
 }
+/* === Header limpio en iPhone / móviles === */
+@media (max-width: 480px) {
+  /* 1) El header en 3 filas: logo, menú, acciones */
+  .site-header { 
+    position: sticky; top: 0; z-index: 50;
+    padding: 8px 0;
+    background: color-mix(in oklab, var(--bg), transparent 15%);
+    backdrop-filter: saturate(160%) blur(10px);
+  }
+  .site-header .container{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+  }
+
+  /* 2) Menú que no se encime */
+  .site-header nav ul{
+    display:flex;
+    flex-wrap:wrap;      /* permite saltar de línea */
+    gap:8px;
+    margin:0; padding:0;
+  }
+  .site-header nav li{ list-style:none; }
+  .site-header nav a{
+    display:block;
+    padding:8px 12px;
+    font-size:14px;
+    border-radius:10px;
+    background:transparent; /* base */
+  }
+
+  /* 3) Si algún link del NAV tiene clases de botón, le quitamos el “botón verde” */
+  .site-header nav a.btn,
+  .site-header nav a.btn-cta,
+  .site-header nav a.btn-wa{
+    background:transparent !important;
+    box-shadow:none !important;
+    color:inherit !important;
+    border:1px solid rgba(255,255,255,0.12); /* opcional para que se vea chip, no botón */
+  }
+
+  /* 4) Acciones (WhatsApp grande + EN/ES) en su propia fila */
+  .site-header .actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .site-header .actions .btn{
+    flex:1 1 0;
+    padding:10px 12px;
+  }
+}
 
 
