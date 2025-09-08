@@ -216,7 +216,7 @@ nav a{ color:var(--txt); opacity:.9; }
   }
 
   /* Opción B: Si prefieres, ocultar la burbuja en móvil (descomenta y borra la A) */
-  /* .wa-float { display: none; } */
+  
 
   /* Botones un poco más cómodos en móvil */
   .btn { padding: 12px 16px; font-size: 16px; }
