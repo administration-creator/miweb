@@ -118,6 +118,11 @@ nav a{ color:var(--txt); opacity:.9; }
     .feature-list{display:grid;gap:8px;margin:12px 0 14px;padding:0;list-style:none}
     .feature-list li{display:flex;gap:10px;align-items:flex-start}
     .feature-list .i{flex:0 0 auto}
+     .price-stack{margin-top:10px; display:inline-flex; flex-direction:column; gap:4px}
+     .price-old{color:var(--muted); font-size:20px; text-decoration:line-through}
+     .price-new{color:var(--cta); font-weight:800; font-size:36px; line-height:1}
+     .price-meta{font-size:12px; color:var(--muted)}
+
 
     /* Premium (Scale) – borde animado suave */
     .price-card.premium{position:relative; border-radius:18px; background:
@@ -177,4 +182,44 @@ nav a{ color:var(--txt); opacity:.9; }
 
     /* Motion / reduced */
     @media (prefers-reduced-motion: reduce){ .testi-row{animation:none} .btn:hover{transform:none} .price-card.premium::before{animation:none} }
+
+/* === iPhone / móviles pequeños (pulido) === */
+@media (max-width: 480px) {
+  /* Apilar CTAs y que no se encimen */
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-row .btn { width: 100%; }
+
+  /* Sticky al fondo con safe-area */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: env(safe-area-inset-bottom, 0);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0));
+    z-index: 40;
+  }
+  .sticky-cta .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Más espacio abajo para que el sticky no tape contenido */
+  body { padding-bottom: 136px; } /* sobrescribe el 72px en pantallas más chicas */
+
+  /* Opción A: Reubicar burbuja de WhatsApp por encima del sticky */
+  .wa-float {
+    bottom: calc(120px + env(safe-area-inset-bottom, 0));
+  }
+
+  /* Opción B: Si prefieres, ocultar la burbuja en móvil (descomenta y borra la A) */
+  /* .wa-float { display: none; } */
+
+  /* Botones un poco más cómodos en móvil */
+  .btn { padding: 12px 16px; font-size: 16px; }
+}
+
 
