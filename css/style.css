@@ -274,5 +274,80 @@ nav a{ color:var(--txt); opacity:.9; }
     padding:10px 12px;
   }
 }
+/* ===== FIX header y sticky en iPhone ===== */
+@media (max-width:480px){
+
+  /* 1) Header en columna: marca → menú → acciones */
+  .nav{
+    display:flex;
+    flex-direction:column;   /* <— en lugar de una sola fila */
+    align-items:stretch;
+    gap:8px;
+  }
+
+  /* 2) Menú como chips que pueden saltar de línea */
+  nav ul{
+    display:flex;
+    flex-wrap:wrap;          /* <— permite 2 líneas */
+    gap:8px;
+    margin:0; padding:0;
+    justify-content:center;
+  }
+  nav li{ list-style:none; }
+  nav a{
+    display:block;
+    padding:8px 12px;
+    font-size:14px;
+    border-radius:10px;
+    background:transparent;
+  }
+
+  /* 3) Neutraliza cualquier BOTÓN dentro del NAV (incluye WhatsApp del nav) */
+  nav a.btn,
+  nav a.btn-cta,
+  nav a.btn-wa,
+  nav a[class*="btn"],
+  nav a[href*="wa.me"]{
+    background:transparent !important;
+    box-shadow:none !important;
+    color:inherit !important;
+    border:1px solid rgba(255,255,255,0.12) !important; /* look de chip, no botón */
+  }
+
+  /* 4) Acciones a su propia fila y con salto permitido */
+  .actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;          /* <— permite bajar */
+    white-space:normal;      /* <— quita el nowrap que tenías */
+  }
+  .actions .btn{ flex:1 1 auto; padding:10px 12px; }
+
+  /* 5) Sticky del pie limpio y en columna */
+  .sticky-cta{
+    position:fixed; left:0; right:0;
+    bottom:env(safe-area-inset-bottom, 0);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0));
+    z-index:40;
+  }
+  .sticky-cta .inner{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .sticky-cta .btn{ width:100%; }
+  body{ padding-bottom:160px; }       /* espacio para que el sticky no tape */
+
+  /* 6) Si hay dos WhatsApp seguidos en el sticky, esconde el segundo */
+  .sticky-cta .btn-wa + .btn-wa{ display:none; }
+
+  /* 7) (Opcional) Oculta la burbuja flotante en móvil para evitar triple WhatsApp */
+  .wa-float{ display:none; }
+}
+
+/* ===== Idioma por defecto: solo EN visible si no se indica ES ===== */
+.t-es{ display:none; }
+body.lang-es .t-en{ display:none; }
+body.lang-es .t-es{ display:initial; }
 
 
