@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks / Gracias — Titan Ops</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container" style="max-width:820px; padding:56px 16px;">
+    <h1 class="t-en">Thanks! Your message was sent. ✅</h1>
+    <h1 class="t-es" style="display:none">¡Gracias! Tu mensaje fue enviado. ✅</h1>
+
+    <p class="lead t-en">
+      We’ll get back to you shortly. To speed things up, you can also book your free consultation:
+    </p>
+    <p class="lead t-es" style="display:none">
+      Te contactaremos muy pronto. Para agilizar, también puedes agendar tu consulta gratuita:
+    </p>
+
+    <div class="cta-row" style="margin-top:16px;">
+      <!-- Calendly -->
+      <a class="btn btn-cta t-en"
+         href="https://calendly.com/administration-titanopsagency/ppl-call?utm_source=website&utm_medium=thanks_cta&utm_campaign=homepage"
+         target="_blank" rel="noopener noreferrer">Book $0 Call</a>
+      <a class="btn btn-cta t-es" style="display:none"
+         href="https://calendly.com/administration-titanopsagency/ppl-call?utm_source=website&utm_medium=thanks_cta&utm_campaign=homepage"
+         target="_blank" rel="noopener noreferrer">Agenda consulta $0</a>
+
+      <!-- WhatsApp -->
+      <a class="btn btn-wa t-en"
+         href="https://wa.me/13109087414?text=Hi%20Titan%20Ops%2C%20I%20sent%20the%20form%20and%20want%20to%20book%20my%20free%20consultation."
+         target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="btn btn-wa t-es" style="display:none"
+         href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20ya%20envi%C3%A9%20el%20formulario%20y%20quiero%20agendar%20mi%20consulta%20gratuita."
+         target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+      <a class="btn btn-ghost" href="/">⬅ Back / Volver</a>
+    </div>
+  </main>
+
+  <!-- Mini-toggle para mostrar ES si viene ?lang=es -->
+  <script>
+    (function(){
+      const qs = new URLSearchParams(location.search);
+      const es = qs.get('lang') === 'es';
+      document.querySelectorAll('.t-en').forEach(el=>el.style.display = es ? 'none' : '');
+      document.querySelectorAll('.t-es').forEach(el=>el.style.display = es ? '' : 'none');
+      if (window.gtag) gtag('event','lead_form_submitted',{value:1});
+    })();
+  </script>
+</body>
+</html>
