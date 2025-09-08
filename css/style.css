@@ -94,6 +94,8 @@ nav a{ color:var(--txt); opacity:.9; }
     section{padding:56px 0; border-top:1px solid var(--border)}
     .section-title{font-size:28px; margin:0 0 10px}
     .muted{color:var(--muted)}
+/* bullets visibles en listas "muted" */
+ul.muted{ list-style: disc inside; }
 
     /* Services */
     .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
@@ -274,26 +276,6 @@ nav a{ color:var(--txt); opacity:.9; }
 .sticky-cta{ display:none !important; }
 body{ padding-bottom:0 !important; }
 
-/* === Burbuja flotante de WhatsApp (única) === */
-.wa-float{
-  position:fixed;
-  right:16px;
-  bottom:calc(16px + env(safe-area-inset-bottom, 0));
-  z-index:60;
-}
-.wa-bubble{
-  display:flex; align-items:center; justify-content:center;
-  width:58px; height:58px; border-radius:999px;
-  background:#25D366;
-  box-shadow:0 6px 16px rgba(0,0,0,.25);
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.wa-bubble:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(0,0,0,.28);
-}
-.wa-bubble svg{ width:28px; height:28px; fill:#fff; }
-
 /* === Esconde botones grandes de WhatsApp en header/hero === */
 header .actions .btn-wa,
 .cta-row .btn-wa{ display:none !important; }
@@ -325,24 +307,6 @@ body.lang-es .t-es{ display:initial !important; }
   }
   nav li{ scroll-snap-align: start; }
 }
-/* --- ÚNICA burbuja flotante de WhatsApp --- */
-.wa-float{
-  position: fixed;
-  right: 16px;
-  bottom: calc(16px + env(safe-area-inset-bottom, 0));
-  z-index: 60;
-}
-.wa-bubble{
-  display: flex;
-  align-items: center; justify-content: center;
-  width: 58px; height: 58px;
-  border-radius: 999px;
-  background: #25D366;                 /* verde WhatsApp */
-  box-shadow: 0 6px 16px rgba(0,0,0,.25);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.wa-bubble:hover{ transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.28); }
-.wa-bubble svg{ width: 28px; height: 28px; fill: #fff; }
 
 /* Quita sticky y botones grandes de WhatsApp en la página */
 .sticky-cta{ display:none !important; }
@@ -351,45 +315,6 @@ header .actions .btn-wa,
 body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el sticky */
 /* --- fix urgente: mostrar el contenido aunque no cargue el JS --- */
 .reveal{ opacity:1 !important; transform:none !important; }
-
-/* WhatsApp bubble */
-.wa-float{
-  position:fixed;
-  right:16px;
-  bottom:calc(16px + env(safe-area-inset-bottom, 0));
-  z-index:60;
-}
-.wa-bubble{
-  width:56px; height:56px;
-  border-radius:50%;
-  display:grid; place-items:center;
-  background:#25D366;           /* verde whatsapp */
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
-  transition:transform .15s ease;
-}
-.wa-bubble svg{ width:28px; height:28px; fill:#fff; }
-@media (hover:hover){ .wa-bubble:hover{ transform:translateY(-2px); } }
-
-/* === WhatsApp floating bubble (unico) === */
-.wa-float{
-  position: fixed;
-  right: max(16px, env(safe-area-inset-right));
-  bottom: max(16px, env(safe-area-inset-bottom));
-  z-index: 9999;
-}
-.wa-bubble{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25D366;          /* verde WhatsApp */
-  box-shadow: 0 8px 24px rgba(0,0,0,.22);
-  text-decoration: none;
-}
-.wa-bubble svg{ width: 28px; height: 28px; fill: #fff; display:block; }
-
 
 /* si usas IMG dentro de la burbuja */
 .wa-bubble img{
@@ -409,5 +334,26 @@ body.lang-es .t-es{display: inline !important}
 .hero-card ul.muted, .card ul, .feature-list{
   list-style: disc;
   padding-left: 1.1rem;
+}
+/* === WhatsApp floating bubble (unica) === */
+.wa-float{
+  position:fixed;
+  right:max(16px, env(safe-area-inset-right));
+  bottom:max(16px, env(safe-area-inset-bottom));
+  z-index:9999;
+}
+.wa-bubble{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:56px; height:56px; border-radius:50%;
+  background:#25D366; /* verde WhatsApp */
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  text-decoration:none;
+}
+.wa-bubble img{ width:28px; height:28px; display:block; }
+
+/* oculta los botones grandes de WhatsApp en header/hero en movil */
+@media (max-width:480px){
+  header .actions .btn-wa,
+  .cta-row .btn-wa{ display:none !important; }
 }
 
