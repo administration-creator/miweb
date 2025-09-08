@@ -109,11 +109,6 @@
           <h1 class="display t-es" style="display:none">Llevamos clientes a tu negocio.</h1>
           <p class="lead t-en">Performance SEO, Google Ads and conversion design. Bilingual team. Transparencia y reportes claros.</p>
           <p class="lead t-es" style="display:none">SEO de performance, Google Ads y diseño de conversión. Equipo bilingüe. Transparencia y reportes claros.</p>
-          <!-- dentro del HERO -->
-<div class="cta-row">
-  <a class="btn btn-cta" href="https://calendly.com/administration-titanopsagency/ppl-call" target="_blank" rel="noopener" aria-label="Book free consultation">
-    Book $0 Call
-  </a>
 
       <!-- dentro del HERO -->
 <div class="cta-row">
@@ -499,20 +494,16 @@
         </details>
 
         
-          <summary>
-            <span class="t-en">Do you work outside Los Angeles?</span>
-            <span class="t-es" style="display:none">¿Trabajan fuera de Los Ángeles?</span>
-          </summary>
-          <div class="muted t-en">Yes. We can serve nearby cities and most US markets.</div>
-          <div class="muted t-es" style="display:none">Sí. Atendemos ciudades cercanas y la mayoría de los mercados en EE. UU.</div>
-        </details>
+         <details>
+  <summary>
+    <span class="t-en">Do you work outside Los Angeles?</span>
+    <span class="t-es" style="display:none">¿Trabajan fuera de Los Ángeles?</span>
+  </summary>
+  <div class="muted t-en">Yes. We can serve nearby cities and most US markets.</div>
+  <div class="muted t-es" style="display:none">Sí. Atendemos ciudades cercanas y la mayoría de los mercados en EE. UU.</div>
+</details>
 
-        <details>
-          <summary>
-          </summary>
-          
-        </details>
-      </div>
+              </div>
     </section>
 
     <!-- CONTACT -->
@@ -542,6 +533,14 @@
           <!-- Netlify form -->
           <form class="contact-card" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="lead" />
+             <!-- UTM & GCLID tracking -->
+           <input type="hidden" name="utm_source" />
+           <input type="hidden" name="utm_medium" />
+           <input type="hidden" name="utm_campaign" />
+           <input type="hidden" name="utm_term" />
+           <input type="hidden" name="utm_content" />
+           <input type="hidden" name="gclid" />
+
             <p style="display:none">
               <label>Don’t fill this out: <input name="bot-field" /></label>
             </p>
@@ -597,8 +596,8 @@
     </div>
   </footer>
 
-  <!-- JSON-LD: ProfessionalService + Service + FAQ + SiteNavigation -->
-   <script type="application/ld+json">
+<!-- JSON-LD CLEAN -->
+<script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Service",
@@ -615,55 +614,50 @@
 }
 </script>
 
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"Titan Ops Marketing",
-    "url":"https://titanopsagency.com/",
-    "image":"https://titanopsagency.com/og-cover.jpg",
-    "email":"hello@titanopsagency.com",
-    "telephone":"+1-310-908-7414",
-    "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
-    "areaServed":["Los Angeles","California","USA"],
-    "contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"leads@titanopsagency.com","telephone":"+1-510-542-9099","areaServed":"US"}]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"20-Minute Strategy Call",
-    "provider":{"@type":"Organization","name":"Titan Ops Marketing"},
-    "areaServed":"Los Angeles, CA",
-    "offers":{"@type":"Offer","price":0,"priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://calendly.com/administration-titanopsagency/30min"}
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Do I have to sign a long contract?","acceptedAnswer":{"@type":"Answer","text":"No. We work month-to-month. You can cancel anytime."}},
-      {"@type":"Question","name":"Is the strategy call in English or Spanish?","acceptedAnswer":{"@type":"Answer","text":"Your choice. We are fully bilingual (EN/ES)."}},
-      {"@type":"Question","name":"What’s included in the $349 setup?","acceptedAnswer":{"@type":"Answer","text":"Tracking plan, landing page, analytics (GA4), pixels, and call tracking configuration."}},
-      {"@type":"Question","name":"How fast can we launch?","acceptedAnswer":{"@type":"Answer","text":"Typically 5–7 business days after setup, depending on assets and approvals."}},
-      {"@type":"Question","name":"Do you work outside Los Angeles?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can serve nearby cities and most US markets."}},
-   ]
-   }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SiteNavigationElement",
-    "name":["Services","Process","Pricing","FAQ","Contact"],
-    "url":[
-      "https://titanopsagency.com/#services",
-      "https://titanopsagency.com/#process",
-      "https://titanopsagency.com/#pricing",
-      "https://titanopsagency.com/#faq",
-      "https://titanopsagency.com/#contact"
-    ]
-  }
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Titan Ops Marketing",
+  "url":"https://titanopsagency.com/",
+  "image":"https://titanopsagency.com/og-cover.jpg",
+  "email":"hello@titanopsagency.com",
+  "telephone":"+1-310-908-7414",
+  "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
+  "areaServed":["Los Angeles","California","USA"],
+  "contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"leads@titanopsagency.com","telephone":"+1-510-542-9099","areaServed":"US"}]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Do I have to sign a long contract?","acceptedAnswer":{"@type":"Answer","text":"No. We work month-to-month. You can cancel anytime."}},
+    {"@type":"Question","name":"Is the strategy call in English or Spanish?","acceptedAnswer":{"@type":"Answer","text":"Your choice. We are fully bilingual (EN/ES)."}},
+    {"@type":"Question","name":"What’s included in the $349 setup?","acceptedAnswer":{"@type":"Answer","text":"Tracking plan, landing page, analytics (GA4), pixels, and call tracking configuration."}},
+    {"@type":"Question","name":"How fast can we launch?","acceptedAnswer":{"@type":"Answer","text":"Typically 5–7 business days after setup, depending on assets and approvals."}},
+    {"@type":"Question","name":"Do you work outside Los Angeles?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can serve nearby cities and most US markets."}}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SiteNavigationElement",
+  "name":["Services","Process","Pricing","FAQ","Contact"],
+  "url":[
+    "https://titanopsagency.com/#services",
+    "https://titanopsagency.com/#process",
+    "https://titanopsagency.com/#pricing",
+    "https://titanopsagency.com/#faq",
+    "https://titanopsagency.com/#contact"
+  ]
+}
+</script>
+
   </script>
 
   
@@ -686,9 +680,16 @@
   track('a[data-plan="setup-349"]','cta_checkout_349');
 })();
 </script>
-
-</body>
-</html>
-
+<!-- UTM & GCLID tracking -->
+<script>
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const setIf = (n) => {
+    const el = document.querySelector('form[name="lead"] [name="'+n+'"]');
+    if (el) el.value = qs.get(n) || '';
+  };
+  ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid"].forEach(setIf);
+})();
+</script>
 </body>
 </html>
