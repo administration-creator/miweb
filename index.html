@@ -596,24 +596,20 @@
 
  
 
-<!-- WhatsApp Floating Bubble -->
+<!-- WhatsApp Floating Bubble (simple, con IMG) -->
 <div class="wa-float" aria-label="WhatsApp quick contact">
   <!-- EN -->
   <a class="wa-bubble t-en"
      href="https://wa.me/13109087414?text=Hi%20Titan%20Ops%2C%20I%20want%20to%20book%20my%20free%20consultation."
      target="_blank" rel="noopener" aria-label="Open WhatsApp chat (EN)">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.1 17.3c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.2-.2.3-.8.9-1 .9-.2 0-.5 0-.8-.4-.4-.3-1.5-.9-2.8-2.6-1-1.2-1.2-2.1-1.1-2.4.1-.3.5-.4.7-.5.2 0 .3 0 .5 0s.4-.1.5.3c.2.3.6 1 .6 1.1.1.2.1.3 0 .5-.1.2-.2.3-.3.5-.2.1-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1.1 1.9 1.3.2.1.5.1.6 0l.7-.9c.2-.2.3-.2.5-.1.2.1 1.6.8 1.9.9.3.1.5.2.6.3.1.1.1.8-.2 1.6-.3.8-1.4 1.5-1.9 1.5-.5.1-1 .1-1.6-.1-1.9-.6-3.1-2-3.5-2.5-.4-.5-2.3-2.4-2.3-4.6 0-2.2 1.4-3.2 2-3.6.6-.4 1.3-.5 1.7-.5.4 0 .8 0 1.1.1.3.1 1 .4 1.1.8.1.4.1 1.3 0 1.5-.1.2-.2.3-.4.4z"/>
-    </svg>
+    <img src="assets/images/icons/whatsapp_logo_icon_186881.png" alt="WhatsApp" width="28" height="28" loading="lazy" />
   </a>
 
   <!-- ES -->
   <a class="wa-bubble t-es"
      href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20agendar%20mi%20consulta%20gratuita."
      target="_blank" rel="noopener" aria-label="Abrir WhatsApp (ES)">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.1 17.3c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.2-.2.3-.8.9-1 .9-.2 0-.5 0-.8-.4-.4-.3-1.5-.9-2.8-2.6-1-1.2-1.2-2.1-1.1-2.4.1-.3.5-.4.7-.5.2 0 .3 0 .5 0s.4-.1.5.3c.2.3.6 1 .6 1.1.1.2.1.3 0 .5-.1.2-.2.3-.3.5-.2.1-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1.1 1.9 1.3.2.1.5.1.6 0l.7-.9c.2-.2.3-.2.5-.1.2.1 1.6.8 1.9.9.3.1.5.2.6.3.1.1.1.8-.2 1.6-.3.8-1.4 1.5-1.9 1.5-.5.1-1 .1-1.6-.1-1.9-.6-3.1-2-3.5-2.5-.4-.5-2.3-2.4-2.3-4.6 0-2.2 1.4-3.2 2-3.6.6-.4 1.3-.5 1.7-.5.4 0 .8 0 1.1.1.3.1 1 .4 1.1.8.1.4.1 1.3 0 1.5-.1.2-.2.3-.4.4z"/>
-    </svg>
+    <img src="assets/images/icons/whatsapp_logo_icon_186881.png" alt="WhatsApp" width="28" height="28" loading="lazy" />
   </a>
 </div>
 
@@ -724,9 +720,21 @@
 })();
 </script>
 <script>
-  document.getElementById('langToggle')?.addEventListener('click', ()=>{
-    document.body.classList.toggle('lang-es');
-  }, {passive:true});
+(function(){
+  const btn  = document.getElementById('langToggle');
+  const body = document.body;
+
+  // restaura preferencia guardada
+  if (localStorage.getItem('lang') === 'es') {
+    body.classList.add('lang-es');
+  }
+
+  // toggle al hacer click
+  btn?.addEventListener('click', () => {
+    body.classList.toggle('lang-es');
+    localStorage.setItem('lang', body.classList.contains('lang-es') ? 'es' : 'en');
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
