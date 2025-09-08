@@ -370,14 +370,13 @@ body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el stic
 .wa-bubble svg{ width:28px; height:28px; fill:#fff; }
 @media (hover:hover){ .wa-bubble:hover{ transform:translateY(-2px); } }
 
-/* ===== WhatsApp floating bubble ===== */
+/* === WhatsApp floating bubble (unico) === */
 .wa-float{
   position: fixed;
   right: max(16px, env(safe-area-inset-right));
   bottom: max(16px, env(safe-area-inset-bottom));
   z-index: 9999;
 }
-
 .wa-bubble{
   display: inline-flex;
   align-items: center;
@@ -389,6 +388,8 @@ body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el stic
   box-shadow: 0 8px 24px rgba(0,0,0,.22);
   text-decoration: none;
 }
+.wa-bubble svg{ width: 28px; height: 28px; fill: #fff; display:block; }
+
 
 /* si usas IMG dentro de la burbuja */
 .wa-bubble img{
