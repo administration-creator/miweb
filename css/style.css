@@ -314,5 +314,29 @@ body.lang-es .t-es{ display:initial; }
   }
   nav li{ scroll-snap-align: start; }
 }
+/* --- ÚNICA burbuja flotante de WhatsApp --- */
+.wa-float{
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0));
+  z-index: 60;
+}
+.wa-bubble{
+  display: flex;
+  align-items: center; justify-content: center;
+  width: 58px; height: 58px;
+  border-radius: 999px;
+  background: #25D366;                 /* verde WhatsApp */
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.wa-bubble:hover{ transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.28); }
+.wa-bubble svg{ width: 28px; height: 28px; fill: #fff; }
+
+/* Quita sticky y botones grandes de WhatsApp en la página */
+.sticky-cta{ display:none !important; }
+header .actions .btn-wa,
+.cta-row .btn-wa{ display:none !important; }
+body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el sticky */
 
 
