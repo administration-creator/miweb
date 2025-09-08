@@ -562,7 +562,7 @@
           </div>
 
           <!-- Netlify form -->
-          <form class="contact-card" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <form class="contact-card" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
             <input type="hidden" name="form-name" value="lead" />
              <!-- UTM & GCLID tracking -->
            <input type="hidden" name="utm_source" />
@@ -621,20 +621,25 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <div class="wa-float" aria-label="WhatsApp quick contact" style="position:fixed;right:16px;bottom:16px;z-index:60">
-<!-- EN -->
-<a class="btn btn-wa t-en"
-   href="https://wa.me/13109087414?text=Hi%20Titan%20Ops%2C%20I%20want%20to%20book%20my%20free%20consultation."
-   target="_blank" rel="noopener">
-  WhatsApp
-</a>
+<div class="wa-float" aria-label="WhatsApp quick contact">
+  <!-- EN -->
+  <a class="wa-bubble t-en"
+     href="https://wa.me/13109087414?text=Hi%20Titan%20Ops%2C%20I%20want%20to%20book%20my%20free%20consultation."
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.39 0 0 5.39 0 12a11.9 11.9 0 0 0 1.64 6L0 24l6.17-1.61A11.92 11.92 0 0 0 12 24c6.61 0 12-5.39 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22.05c-1.93 0-3.81-.51-5.46-1.48l-.39-.23-3.66.96.98-3.57-.25-.41A9.99 9.99 0 0 1 2 12C2 6.49 6.49 2 12 2c2.66 0 5.16 1.04 7.03 2.97A9.93 9.93 0 0 1 22 12c0 5.51-4.49 10.05-10 10.05zm5.49-7.49c-.3-.15-1.78-.88-2.06-.98-.28-.11-.48-.15-.68.15-.2.3-.79.98-.97 1.18-.18.2-.36.23-.66.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.08-.81.38-.28.3-1.07 1.04-1.07 2.53s1.1 2.94 1.26 3.14c.15.2 2.17 3.31 5.26 4.65.74.32 1.31.51 1.76.65.74.24 1.42.21 1.96.13.6-.09 1.78-.72 2.03-1.42.25-.7.25-1.29.18-1.42-.07-.13-.26-.2-.56-.35z"/>
+    </svg>
+  </a>
 
-<!-- ES -->
-<a class="btn btn-wa t-es" style="display:none"
-   href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20agendar%20mi%20consulta%20gratuita."
-   target="_blank" rel="noopener">
-  WhatsApp
-</a>
+  <!-- ES -->
+  <a class="wa-bubble t-es"
+     href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20agendar%20mi%20consulta%20gratuita."
+     target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.39 0 0 5.39 0 12a11.9 11.9 0 0 0 1.64 6L0 24l6.17-1.61A11.92 11.92 0 0 0 12 24c6.61 0 12-5.39 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22.05c-1.93 0-3.81-.51-5.46-1.48l-.39-.23-3.66.96.98-3.57-.25-.41A9.99 9.99 0 0 1 2 12C2 6.49 6.49 2 12 2c2.66 0 5.16 1.04 7.03 2.97A9.93 9.93 0 0 1 22 12c0 5.51-4.49 10.05-10 10.05zm5.49-7.49c-.3-.15-1.78-.88-2.06-.98-.28-.11-.48-.15-.68.15-.2.3-.79.98-.97 1.18-.18.2-.36.23-.66.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.08-.81.38-.28.3-1.07 1.04-1.07 2.53s1.1 2.94 1.26 3.14c.15.2 2.17 3.31 5.26 4.65.74.32 1.31.51 1.76.65.74.24 1.42.21 1.96.13.6-.09 1.78-.72 2.03-1.42.25-.7.25-1.29.18-1.42-.07-.13-.26-.2-.56-.35z"/>
+    </svg>
+  </a>
+</div>
 
     </div>
   </main>
