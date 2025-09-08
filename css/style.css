@@ -302,9 +302,6 @@ header .actions .btn-wa,
   /* 6) Si hay dos WhatsApp seguidos en el sticky, esconde el segundo */
   .sticky-cta .btn-wa + .btn-wa{ display:none; }
 
-  /* 7) (Opcional) Oculta la burbuja flotante en móvil para evitar triple WhatsApp */
-  .wa-float{ display:none; }
-}
 
 /* ===== Idioma por defecto: EN; al activar ES se invierten ===== */
 .t-es{ display:none !important; }
@@ -352,5 +349,25 @@ body.lang-es .t-es{ display:initial !important; }
 header .actions .btn-wa,
 .cta-row .btn-wa{ display:none !important; }
 body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el sticky */
+/* --- fix urgente: mostrar el contenido aunque no cargue el JS --- */
+.reveal{ opacity:1 !important; transform:none !important; }
+
+/* WhatsApp bubble */
+.wa-float{
+  position:fixed;
+  right:16px;
+  bottom:calc(16px + env(safe-area-inset-bottom, 0));
+  z-index:60;
+}
+.wa-bubble{
+  width:56px; height:56px;
+  border-radius:50%;
+  display:grid; place-items:center;
+  background:#25D366;           /* verde whatsapp */
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  transition:transform .15s ease;
+}
+.wa-bubble svg{ width:28px; height:28px; fill:#fff; }
+@media (hover:hover){ .wa-bubble:hover{ transform:translateY(-2px); } }
 
 
