@@ -301,7 +301,7 @@
             <div class="price">$0</div>
             <p class="muted t-en">20-minute video call (EN/ES). Diagnostic + action plan. </p>
             <p class="muted t-es" style="display:none">Videollamada de 20 min (ES/EN). Diagnóstico + plan de acción.</p>
-            <a class="btn btn-cta" href="https://calendly.com/administration-titanopsagency/30min" target="_blank" rel="noopener">Book now</a>
+            <a class="btn btn-cta" href="https://calendly.com/administration-titanopsagency/ppl-call" target="_blank" rel="noopener">Book now</a>
           </article>
 
           <!-- Setup -->
@@ -406,7 +406,7 @@
               <li><span class="i">⭐</span> Soporte premium con prioridad y ajustes más rápidos</li>
             </ul>
 
-            <a class="btn btn-premium" href="https://calendly.com/administration-titanopsagency/30min" target="_blank" rel="noopener">Talk about Scale</a>
+            <a class="btn btn-premium" href="https://calendly.com/administration-titanopsagency/ppl-call" target="_blank" rel="noopener">Talk about Scale</a>
           </article>
 
           <!-- Custom Plan (4th card) -->
@@ -427,7 +427,7 @@
               <li><span class="i">🤝</span> Asesoría directa</li>
               <li><span class="i">🔒</span> Confidencial y enfocado</li>
             </ul>
-            <a class="btn btn-satin" href="https://calendly.com/administration-titanopsagency/30min" target="_blank" rel="noopener">
+            <a class="btn btn-satin" href="https://calendly.com/administration-titanopsagency/ppl-call" target="_blank" rel="noopener">
               <span class="t-en">Schedule now</span>
               <span class="t-es" style="display:none">Agendar ahora</span>
             </a>
@@ -504,9 +504,16 @@
           <div class="contact-card">
             <p><strong>Email:</strong> <a href="mailto:hello@titanopsagency.com">hello@titanopsagency.com</a> &nbsp;|&nbsp; <a href="mailto:leads@titanopsagency.com">leads@titanopsagency.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:+13109087414">(310) 908-7414</a> &nbsp;|&nbsp; <a href="tel:+15105429099">(510) 542-9099</a></p>
-            <div class="cta-row">
-              <a class="btn btn-cta" href="https://calendly.com/administration-titanopsagency/30min" target="_blank" rel="noopener">Book $0 VideoCall</a>
-              <a class="btn btn-wa" href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Open WhatsApp chat">WhatsApp</a>
+<div class="cta-row">
+  <a class="btn btn-cta" href="https://calendly.com/administration-titanopsagency/ppl-call" target="_blank" rel="noopener" aria-label="Book free consultation">
+    Book $0 Call
+  </a>
+  <a class="btn btn-wa" href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20agendar%20mi%20consulta%20gratuita." target="_blank" rel="noopener" aria-label="Open WhatsApp to book $0 Videocall">
+    WhatsApp
+  </a>
+  <a class="btn btn-ghost" href="#pricing" rel="noopener">See Pricing</a>
+</div>
+
             </div>
             <p class="muted t-en">Business hours: Mon–Sat • 10:00–20:00 PT</p>
             <p class="muted t-es" style="display:none">Horario: Lun–Sáb • 10:00–20:00 PT</p>
@@ -543,7 +550,13 @@
         <strong class="t-en">Ready to get more clients?</strong>
         <strong class="t-es" style="display:none">¿Listo para más clientes?</strong>
         <div>
-        </div>
+  <a class="btn btn-cta" href="https://calendly.com/administration-titanopsagency/ppl-call" target="_blank" rel="noopener">
+    Book $0
+  </a>
+  <a class="btn btn-wa" href="https://wa.me/13109087414?text=Quiero%20Pay-Per-Lead" target="_blank" rel="noopener">
+    WhatsApp
+  </a>
+</div>
       </div>
     </div>
 
@@ -565,7 +578,23 @@
   </footer>
 
   <!-- JSON-LD: ProfessionalService + Service + FAQ + SiteNavigation -->
-  <script type="application/ld+json">
+   <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"20-Minute Strategy Call",
+  "provider":{"@type":"Organization","name":"Titan Ops Marketing"},
+  "areaServed":"Los Angeles, CA",
+  "offers":{
+    "@type":"Offer",
+    "price":0,
+    "priceCurrency":"USD",
+    "availability":"https://schema.org/InStock",
+    "url":"https://calendly.com/administration-titanopsagency/ppl-call"
+  }
+}
+</script>
+
   {
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
@@ -620,6 +649,26 @@
   
   <noscript>Your browser has JavaScript disabled; visual effects and language toggle are limited but the site remains fully usable.</noscript>
 <script src="js/main.js" defer></script>
+
+<!-- GA4 custom event tracking for CTAs -->
+<script>
+(function(){
+  function track(selector, eventName){
+    document.querySelectorAll(selector).forEach(a=>{
+      a.addEventListener('click', ()=> {
+        if (window.gtag) gtag('event', eventName, {label: a.href || a.textContent});
+      }, {passive:true});
+    });
+  }
+  track('a[href*="calendly.com/administration-titanopsagency/ppl-call"]','cta_calendly');
+  track('a[href^="https://wa.me"]','cta_whatsapp');
+  track('a[data-plan="monthly-997"]','cta_subscribe_997');
+  track('a[data-plan="setup-349"]','cta_checkout_349');
+})();
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
