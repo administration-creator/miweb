@@ -533,4 +533,12 @@ header{
 /* Por si quedó alguna regla vieja genérica tipo nav{display:none}: */
 #mobileMenu nav{ display:block !important; }
 #mobileMenu .mobile-nav{ display:block !important; }
+/* --- Parche: que el menú del overlay NUNCA se oculte --- */
+#mobileMenu { z-index:9999 !important; }
+#mobileMenu nav,
+#mobileMenu .mobile-nav { display:block !important; }
+#mobileMenu .mobile-nav { flex:1 !important; overflow:auto !important; }
+/* Rayas de la hamburguesa (evita “puntitos”) */
+.menu-toggle{display:inline-flex !important; flex-direction:column; gap:6px;}
+.menu-toggle > span{width:24px !important; height:2px !important; border-radius:2px !important;}
 
