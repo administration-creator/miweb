@@ -335,33 +335,33 @@ header{
 .mobile-actions .btn{width:100%;}
 
 @media (min-width:741px){
-  header nav{ display:block }        /* <-- SOLO el nav del header */
+  .nav > nav{ display:block }        /* <-- SOLO el nav del header */
   .actions{ display:flex }
   .menu-toggle{ display:none }
   .mobile-menu{ display:none !important }
 }
 
 @media (max-width:740px){
-  header nav{ display:none }         /* <-- SOLO el nav del header */
+  .nav > nav{ display:none }         /* <-- SOLO el nav del header */
   .actions{ display:none }
   .menu-toggle{ display:inline-flex; margin-left:auto }
 }
 
 /* ===== FORCE MOBILE NAV ON TOUCH DEVICES (any orientation) ===== */
 @media (hover: none) and (pointer: coarse){
-  header nav{ display:none !important; }
+  .nav > nav{ display:none !important; }
   .actions{ display:none !important; }
   .menu-toggle{ display:inline-flex !important; margin-left:auto; }
 }
 
 /* ===== WIDER FALLBACK BREAKPOINT (covers landscape phones & small tablets) ===== */
 @media (max-width: 1024px){
-  header nav{ display:none; }
+  .nav > nav{ display:none; }
   .actions{ display:none; }
   .menu-toggle{ display:inline-flex; margin-left:auto; }
 }
 @media (min-width: 1025px){
-  header nav{ display:block; }
+  .nav > nav{ display:block; }
   .actions{ display:flex; }
   .menu-toggle{ display:none; }
 }
@@ -436,7 +436,7 @@ header{
 
 /* — Opcional: fuerza hamburguesa en teléfonos (portrait/landscape) — */
 @media (hover:none) and (pointer:coarse){
-  header nav{ display:none !important; }
+  .nav > nav{ display:none !important; }
   .actions{ display:none !important; }
   .menu-toggle{ display:inline-flex !important; margin-left:auto; }
 }
@@ -470,7 +470,7 @@ header{
 
 /* Forzar hamburguesa en teléfonos (portrait y landscape) */
 @media (hover:none) and (pointer:coarse){
-  header nav{ display:none !important; }
+ .nav > nav{ display:none !important; }
   .actions{ display:none !important; }
   .menu-toggle{ display:inline-flex !important; margin-left:auto !important; }
 }
@@ -519,13 +519,13 @@ header{
 
 /* — RESPONSIVE: en desktop se ve todo; en móvil solo hamburguesa — */
 @media (min-width:1025px){
-  header nav{ display:block !important; }    /* menú header visible en desktop */
+  .nav > nav{ display:block !important; }    /* menú header visible en desktop */
   .actions{ display:flex !important; }
   .menu-toggle{ display:none !important; }
   #mobileMenu{ display:none !important; }
 }
 @media (max-width:1024px){
-  header nav{ display:none !important; }     /* oculta menú header en phones/tablets */
+  .nav > nav{ display:none !important; }     /* oculta menú header en phones/tablets */
   .actions{ display:none !important; }
   .menu-toggle{ display:inline-flex !important; margin-left:auto; }
 }
