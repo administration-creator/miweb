@@ -335,16 +335,18 @@ header{
 .mobile-actions .btn{width:100%;}
 
 @media (min-width:741px){
-  nav{display:block}
-  .actions{display:flex}
-  .menu-toggle{display:none}
-  .mobile-menu{display:none !important}
+  header nav{ display:block }        /* <-- SOLO el nav del header */
+  .actions{ display:flex }
+  .menu-toggle{ display:none }
+  .mobile-menu{ display:none !important }
 }
+
 @media (max-width:740px){
-  nav{display:none}
-  .actions{display:none}
-  .menu-toggle{display:inline-flex; margin-left:auto}
+  header nav{ display:none }         /* <-- SOLO el nav del header */
+  .actions{ display:none }
+  .menu-toggle{ display:inline-flex; margin-left:auto }
 }
+
 /* ===== FORCE MOBILE NAV ON TOUCH DEVICES (any orientation) ===== */
 @media (hover: none) and (pointer: coarse){
   header nav{ display:none !important; }
@@ -439,4 +441,10 @@ header{
   .menu-toggle{ display:inline-flex !important; margin-left:auto; }
 }
 
+/* Fuerza que el menú del overlay esté visible en móvil */
+#mobileMenu .mobile-nav{ display:block !important; }
+#mobileMenu .mobile-nav ul{
+  display:flex; flex-direction:column; gap:12px;
+  margin:0; padding:24px 0 0;
+}
 
