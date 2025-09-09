@@ -447,4 +447,31 @@ header{
   display:flex; flex-direction:column; gap:12px;
   margin:0; padding:24px 0 0;
 }
+/* ====== MOBILE OVERLAY: forzar visibilidad del menú ====== */
+#mobileMenu{ z-index: 9999 !important; display:flex !important; }
+#mobileMenu .mobile-nav{ display:block !important; flex:1 !important; overflow:auto !important; }
+#mobileMenu nav{ display:block !important; }
+#mobileMenu .mobile-nav ul{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
+  margin:0 !important;
+  padding:24px 0 0 !important;
+}
+#mobileMenu .mobile-nav li{ display:block !important; }
+#mobileMenu .mobile-nav a{
+  display:block !important;
+  padding:12px 14px !important;
+  border:1px solid var(--border) !important;
+  border-radius:12px !important;
+  background:rgba(255,255,255,.02) !important;
+  color:var(--txt) !important;
+}
+
+/* Forzar hamburguesa en teléfonos (portrait y landscape) */
+@media (hover:none) and (pointer:coarse){
+  header nav{ display:none !important; }
+  .actions{ display:none !important; }
+  .menu-toggle{ display:inline-flex !important; margin-left:auto !important; }
+}
 
