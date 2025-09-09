@@ -52,6 +52,8 @@ header{
 .nav{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; padding:6px 0; flex-wrap:nowrap;
+/* Empuja el bloque de acciones a la derecha */
+.actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
 }
 
 /* Logo */
@@ -81,7 +83,7 @@ nav a{ color:var(--txt); opacity:.9; }
 .lang-toggle{ min-width:auto; padding:8px 10px; }
 
     /* Hero */
-    .hero{padding:72px 0 32px; position:relative; isolation:isolate}
+    .hero{padding:56px 0 32px; position:relative; isolation:isolate}
     .hero::before{content:""; position:absolute; inset:0; z-index:-1; background-image:var(--hero-img); background-size:cover; background-position:center; opacity:.14; filter:grayscale(.1)}
     .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center}
     .eyebrow{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid var(--border); background:rgba(255,255,255,.02); border-radius:999px; color:var(--muted); font-size:12px}
