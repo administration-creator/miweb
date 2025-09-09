@@ -317,8 +317,8 @@ body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el stic
 .reveal{ opacity:1 !important; transform:none !important; }
 
 /* si usas IMG dentro de la burbuja */
-.wa-bubble img{
-  width: 28px; height: 28px; display: block;
+  .wa-bubble img{ width:40px; height:40px; display:block; }
+
 }
 
 /* si dejas el SVG inline (por si acaso) */
@@ -335,7 +335,7 @@ body.lang-es .t-es{display: inline !important}
   list-style: disc;
   padding-left: 1.1rem;
 }
-/* WhatsApp floating bubble */
+/* Floating Message (iPhone-style) */
 .wa-float{
   position:fixed;
   right:16px;
@@ -345,11 +345,12 @@ body.lang-es .t-es{display: inline !important}
 .wa-bubble{
   width:56px; height:56px;
   display:flex; align-items:center; justify-content:center;
-  border-radius:50%;
-  background:#25D366;
+  background:transparent;          /* sin verde */
+  border-radius:16px;               /* look iOS */
   box-shadow:0 8px 24px rgba(0,0,0,.2);
 }
-.wa-bubble img{ width:28px; height:28px; display:block; }
+.wa-bubble img{ width:40px; height:40px; display:block; }
+
 
 /* idioma: por defecto EN visible y ES oculto */
 .wa-float .t-es{ display:none; }
