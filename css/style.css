@@ -49,17 +49,18 @@ header{
 }
 
 /* Barra: una sola línea (logo – menú – acciones) */
-.nav{
+nav{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; padding:6px 0; flex-wrap:nowrap;
-/* Empuja el bloque de acciones a la derecha */
-.actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+}
+.actions{
+  margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap;
 }
 
 /* Logo */
 .brand{ min-width:140px; display:flex; align-items:center; gap:12px; }
 .logo-img{
-  height:52px;           /* 28–32px; 30 luce pro */
+  height:32px;           /* 28–32px; 30 luce pro */
   width:auto; display:block; vertical-align:middle;
   transform:translateY(1px); /* microajuste óptico */
 }
@@ -226,103 +227,6 @@ ul.muted{ list-style: disc inside; }
   .btn { padding: 12px 16px; font-size: 16px; }
 }
 
-/* ===== FIX header y sticky en iPhone ===== */
-@media (max-width:480px){
-
-  /* 1) Header en columna: marca → menú → acciones */
-  .nav{
-    display:flex;
-    flex-direction:column;   /* <— en lugar de una sola fila */
-    align-items:stretch;
-    gap:8px;
-  }
-
-  /* 2) Menú como chips que pueden saltar de línea */
-  nav ul{
-    display:flex;
-    flex-wrap:wrap;          /* <— permite 2 líneas */
-    gap:8px;
-    margin:0; padding:0;
-    justify-content:center;
-  }
-  nav li{ list-style:none; }
-  nav a{
-    display:block;
-    padding:8px 12px;
-    font-size:14px;
-    border-radius:10px;
-    background:transparent;
-  }
-
-  /* 3) Neutraliza cualquier BOTÓN dentro del NAV (incluye WhatsApp del nav) */
-  nav a.btn,
-  nav a.btn-cta,
-  nav a.btn-wa,
-  nav a[class*="btn"],
-  nav a[href*="wa.me"]{
-    background:transparent !important;
-    box-shadow:none !important;
-    color:inherit !important;
-    border:1px solid rgba(255,255,255,0.12) !important; /* look de chip, no botón */
-  }
-
-  /* 4) Acciones a su propia fila y con salto permitido */
-  .actions{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;          /* <— permite bajar */
-    white-space:normal;      /* <— quita el nowrap que tenías */
-  }
-  .actions .btn{ flex:1 1 auto; padding:10px 12px; }
-/* === Sticky CTA desactivado y sin reserva de espacio === */
-.sticky-cta{ display:none !important; }
-body{ padding-bottom:0 !important; }
-
-/* === Esconde botones grandes de WhatsApp en header/hero === */
-header .actions .btn-wa,
-.cta-row .btn-wa{ display:none !important; }
-
-  
-  /* 6) Si hay dos WhatsApp seguidos en el sticky, esconde el segundo */
-  .sticky-cta .btn-wa + .btn-wa{ display:none; }
-
-
-/* ===== Idioma por defecto: EN; al activar ES se invierten ===== */
-.t-es{ display:none !important; }
-body.lang-es .t-en{ display:none !important; }
-body.lang-es .t-es{ display:initial !important; }
-
-/* — Menú compacto para que quepa en 1 línea — */
-@media (max-width: 480px){
-  nav ul{ gap:6px; }
-  nav a{ font-size:13px; padding:6px 10px; } /* antes 14px y 8x12 */
-  header .actions .btn{ flex:1 1 48%; }      /* WhatsApp y ES a 50/50 */
-}
-
-/* — Si aún no cabe, usa scroll horizontal SOLO en pantallas muy angostas — */
-@media (max-width: 360px){
-  nav ul{
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-  }
-  nav li{ scroll-snap-align: start; }
-}
-
-/* Quita sticky y botones grandes de WhatsApp en la página */
-.sticky-cta{ display:none !important; }
-header .actions .btn-wa,
-.cta-row .btn-wa{ display:none !important; }
-body{ padding-bottom: 0 !important; }   /* ya no reservamos espacio para el sticky */
-/* --- fix urgente: mostrar el contenido aunque no cargue el JS --- */
-.reveal{ opacity:1 !important; transform:none !important; }
-
-/* si usas IMG dentro de la burbuja */
-  .wa-bubble img{ width:40px; height:40px; display:block; }
-
-}
-
 /* si dejas el SVG inline (por si acaso) */
 .wa-bubble svg{ width: 28px; height: 28px; display: block; fill: #fff }
 
@@ -358,13 +262,7 @@ body.lang-es .t-es{display: inline !important}
 .wa-float .t-es{ display:none; }
 .lang-es .wa-float .t-en{ display:none !important; }
 .lang-es .wa-float .t-es{ display:flex !important; }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-
-/* Header layout (fix) */
-.nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:6px 0; flex-wrap:nowrap; }
-.actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
 
 /* Hamburguesa */
 .menu-toggle{ display:none; width:42px; height:42px; border:1px solid var(--border); border-radius:10px; background:var(--card); align-items:center; justify-content:center; gap:5px; }
@@ -377,18 +275,6 @@ body.lang-es .t-es{display: inline !important}
 .mobile-nav a{ display:block; padding:12px 14px; border:1px solid var(--border); border-radius:12px; background:rgba(255,255,255,.02); color:var(--txt); }
 .mobile-actions{ margin-top:auto; display:flex; flex-direction:column; gap:10px }
 .mobile-actions .btn{ width:100%; text-align:center }
-
-/* Responsive: desktop vs móvil */
-@media (min-width:741px){
-  .menu-toggle{ display:none }
-  nav{ display:block }
-  .actions{ display:flex }
-}
-@media (max-width:740px){
-  nav{ display:none }       /* oculta menú header */
-  .actions{ display:none }  /* oculta acciones */
-  .menu-toggle{ display:inline-flex; margin-left:auto } /* muestra hamburguesa */
-}
 
 /* === Fix: hamburger lines === */
 .menu-toggle{
@@ -413,14 +299,51 @@ body.lang-es .t-es{display: inline !important}
 }
 .mobile-actions .btn{ height:48px; align-items:center; display:flex; justify-content:center; }
 
-/* === Header layout desktop === */
-.nav{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding:6px 0; flex-wrap:nowrap;
-}
-.actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
 
-=======
->>>>>>> parent of d863420 (Update style.css)
-=======
->>>>>>> parent of d863420 (Update style.css)
+/* === HEADER CLEAN OVERRIDE (único) === */
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(150%) blur(8px);
+  background:color-mix(in oklab,var(--bg),transparent 35%);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex; align-items:center; gap:16px; padding:6px 0;}
+.actions{margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap;}
+
+.menu-toggle{
+  display:none; width:42px; height:42px;
+  border:1px solid var(--border); border-radius:10px;
+  background:var(--card); align-items:center; justify-content:center; gap:6px;
+}
+.menu-toggle span{display:block; width:22px; height:2px; background:var(--txt); border-radius:2px;}
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:80;
+  background:color-mix(in oklab,var(--bg),black 10%);
+  backdrop-filter:blur(8px) saturate(140%);
+  display:flex; flex-direction:column; gap:20px; padding:20px;
+}
+.mobile-menu[hidden]{display:none;}
+.mobile-menu .menu-close{
+  position:absolute; top:16px; right:16px; width:42px; height:42px;
+  border:1px solid var(--border); border-radius:10px; background:var(--card);
+  color:var(--txt); font-size:22px; line-height:1;
+}
+.mobile-nav ul{list-style:none; margin:0; padding:64px 0 0; display:flex; flex-direction:column; gap:10px;}
+.mobile-nav a{display:block; padding:12px 14px; border:1px solid var(--border); border-radius:12px; background:rgba(255,255,255,.02); color:var(--txt);}
+.mobile-actions{margin-top:auto; display:flex; flex-direction:column; gap:10px;}
+.mobile-actions .btn{width:100%;}
+
+@media (min-width:741px){
+  nav{display:block}
+  .actions{display:flex}
+  .menu-toggle{display:none}
+  .mobile-menu{display:none !important}
+}
+@media (max-width:740px){
+  nav{display:none}
+  .actions{display:none}
+  .menu-toggle{display:inline-flex; margin-left:auto}
+}
+
+
