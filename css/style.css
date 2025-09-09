@@ -345,5 +345,42 @@ header{
   .actions{display:none}
   .menu-toggle{display:inline-flex; margin-left:auto}
 }
+/* ===== FORCE MOBILE NAV ON TOUCH DEVICES (any orientation) ===== */
+@media (hover: none) and (pointer: coarse){
+  header nav{ display:none !important; }
+  .actions{ display:none !important; }
+  .menu-toggle{ display:inline-flex !important; margin-left:auto; }
+}
+
+/* ===== WIDER FALLBACK BREAKPOINT (covers landscape phones & small tablets) ===== */
+@media (max-width: 1024px){
+  header nav{ display:none; }
+  .actions{ display:none; }
+  .menu-toggle{ display:inline-flex; margin-left:auto; }
+}
+@media (min-width: 1025px){
+  header nav{ display:block; }
+  .actions{ display:flex; }
+  .menu-toggle{ display:none; }
+}
+
+/* ===== HAMBURGER LINES (evita “puntitos”) ===== */
+.menu-toggle{
+  width:42px; height:42px; border:1px solid var(--border);
+  border-radius:10px; background:var(--card);
+  align-items:center; justify-content:center; gap:6px;
+  display:inline-flex; /* por si algún estilo lo oculta */
+}
+.menu-toggle span{
+  display:block;
+  width:22px !important;
+  height:2px !important;
+  background:var(--txt) !important;
+  border-radius:2px !important;
+}
+
+/* ===== MOBILE MENU POLISH (espacio seguro notch y mejor overlay) ===== */
+.mobile-menu{ padding-top: max(20px, env(safe-area-inset-top)); }
+.mobile-actions{ padding-bottom: max(16px, env(safe-area-inset-bottom)); }
 
 
