@@ -68,28 +68,56 @@
 
    <header>
   <div class="container nav">
-    <div class="brand" aria-label="Titan Ops Marketing">
-      <img src="assets/images/icons/logo-horizontal-darkbg.svg"
-           alt="Titan Ops Marketing" class="logo-img">
-    </div>
-    </div>
+    <!-- Marca -->
+    <a class="brand" href="#">
+      <img src="assets/images/icons/logo-horizontal-darkbg.svg" alt="Titan Ops Marketing" class="logo-img">
+    </a>
+
+    <!-- Menú (desktop) -->
     <nav aria-label="Primary">
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="hide-desktop"><a class="js-contact" href="#contact">Contact</a></li>
       </ul>
     </nav>
 
+    <!-- Acciones (derecha en desktop) -->
     <div class="actions">
-  <a class="btn js-contact" href="#contact">
-    <span class="t-en">Contact</span><span class="t-es">Contacto</span>
-  </a>
-  <a class="btn" href="tel:+15105429099" aria-label="Call (510) 542-9099">(510) 542-9099</a>
-  <button class="btn lang-toggle" id="langToggle" aria-label="Switch language (ES)">EN/ES</button>
-</div>
+      <a class="btn js-contact" href="#contact">
+        <span class="t-en">Contact</span><span class="t-es">Contacto</span>
+      </a>
+      <a class="btn" href="tel:+15105429099" aria-label="Call (510) 542-9099">(510) 542-9099</a>
+      <button class="btn lang-toggle" id="langToggle" aria-label="Switch language (ES)">EN/ES</button>
+    </div>
+
+    <!-- Hamburguesa (solo móvil) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Overlay del menú móvil -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <button class="menu-close" aria-label="Close menu">×</button>
+
+    <nav class="mobile-nav" aria-label="Mobile">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="js-contact" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-actions">
+      <a class="btn js-contact" href="#contact">Contact</a>
+      <a class="btn" href="tel:+15105429099">(510) 542-9099</a>
+    </div>
+  </div>
 
   </header>
 
@@ -102,7 +130,7 @@
       <h1 class="display t-en">We bring customers to your business.</h1>
       <h1 class="display t-es" style="display:none">Llevamos clientes a tu negocio.</h1>
 
-      <p class="lead t-en">Performance SEO, Google Ads and conversion design. Bilingual team. Transparencia y reportes claros.</p>
+      <p class="lead t-en">Performance SEO, Google Ads and conversion design. Bilingual team. Clear reporting.</p>
       <p class="lead t-es" style="display:none">SEO de performance, Google Ads y diseño de conversión. Equipo bilingüe. Transparencia y reportes claros.</p>
 
       <div class="cta-row">
@@ -669,19 +697,25 @@
   <noscript>Your browser has JavaScript disabled; visual effects and language toggle are limited but the site remains fully usable.</noscript>
 <script src="js/main.js" defer></script>
 
-<!-- GA4 custom event tracking for CTAs -->
+<!-- GA4 custom event tracking for CTAs (único) -->
 <script>
 (function(){
   function track(selector, eventName){
-    document.querySelectorAll(selector).forEach(a=>{
-      a.addEventListener('click', ()=> {
-        if (window.gtag) gtag('event', eventName, {label: a.href || a.textContent});
+    document.querySelectorAll(selector).forEach(el=>{
+      el.addEventListener('click', ()=>{
+        if (window.gtag) gtag('event', eventName, { label: el.href || el.textContent });
       }, {passive:true});
     });
   }
+
+  // CTAs principales
   track('a[href*="calendly.com/administration-titanopsagency/ppl-call"]','cta_calendly');
+  track('a.js-contact','cta_contact');                  // todos los "Contact" que bajan al form
   track('a[data-plan="monthly-997"]','cta_subscribe_997');
   track('a[data-plan="setup-349"]','cta_checkout_349');
+
+  // Opcional: clics a teléfono
+  track('a[href^="tel:"]','cta_call');
 })();
 </script>
 <!-- UTM & GCLID tracking -->
@@ -727,6 +761,20 @@
   track('a[data-plan="setup-349"]','cta_checkout_349');
   /* nuevo: */
   track('a.js-contact','cta_contact');
+})();
+</script>
+<script>
+(function(){
+  const toggle = document.getElementById('menuToggle');
+  const menu   = document.getElementById('mobileMenu');
+  if(!toggle || !menu) return;
+  const closeBtn = menu.querySelector('.menu-close');
+
+  const openMenu  = () => { menu.hidden = false; toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+  const closeMenu = () => { menu.hidden = true;  toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+
+  toggle.addEventListener('click', ()=> menu.hidden ? openMenu() : closeMenu(), {passive:true});
+  closeBtn.addEventListener('click', closeMenu, {passive:true});
 })();
 </script>
 
