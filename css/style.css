@@ -52,13 +52,14 @@ header{
 .nav{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; padding:6px 0; flex-wrap:nowrap;
-}
+/* Empuja el bloque de acciones a la derecha */
 .actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+}
 
 /* Logo */
 .brand{ min-width:140px; display:flex; align-items:center; gap:12px; }
 .logo-img{
-  height:32px;           /* 28–32px; 30 luce pro */
+  height:52px;           /* 28–32px; 30 luce pro */
   width:auto; display:block; vertical-align:middle;
   transform:translateY(1px); /* microajuste óptico */
 }
@@ -225,6 +226,16 @@ ul.muted{ list-style: disc inside; }
   .btn { padding: 12px 16px; font-size: 16px; }
 }
 
+/* ===== FIX header y sticky en iPhone ===== */
+@media (max-width:480px){
+
+  /* 1) Header en columna: marca → menú → acciones */
+  .nav{
+    display:flex;
+    flex-direction:column;   /* <— en lugar de una sola fila */
+    align-items:stretch;
+    gap:8px;
+  }
 
   /* 2) Menú como chips que pueden saltar de línea */
   nav ul{
@@ -347,6 +358,7 @@ body.lang-es .t-es{display: inline !important}
 .wa-float .t-es{ display:none; }
 .lang-es .wa-float .t-en{ display:none !important; }
 .lang-es .wa-float .t-es{ display:flex !important; }
+<<<<<<< HEAD
 
 
 /* Header layout (fix) */
@@ -407,3 +419,5 @@ body.lang-es .t-es{display: inline !important}
 }
 .actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
 
+=======
+>>>>>>> parent of d863420 (Update style.css)
