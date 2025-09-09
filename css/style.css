@@ -359,6 +359,7 @@ body.lang-es .t-es{display: inline !important}
 .lang-es .wa-float .t-en{ display:none !important; }
 .lang-es .wa-float .t-es{ display:flex !important; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 /* Header layout (fix) */
@@ -419,5 +420,7 @@ body.lang-es .t-es{display: inline !important}
 }
 .actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
 
+=======
+>>>>>>> parent of d863420 (Update style.css)
 =======
 >>>>>>> parent of d863420 (Update style.css)
