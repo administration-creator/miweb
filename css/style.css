@@ -376,3 +376,34 @@ body.lang-es .t-es{display: inline !important}
   .actions{ display:none }  /* oculta acciones */
   .menu-toggle{ display:inline-flex; margin-left:auto } /* muestra hamburguesa */
 }
+
+/* === Fix: hamburger lines === */
+.menu-toggle{
+  width:42px; height:42px;
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:6px; /* separación entre rayas */
+}
+.menu-toggle span{
+  display:block;
+  width:22px !important;     /* largo de la raya */
+  height:2px !important;     /* grosor de la raya */
+  background:var(--txt) !important;
+  border-radius:2px !important; /* NO círculos */
+}
+/* === Mobile menu polish === */
+.mobile-nav ul{ padding-top:24px; }      /* menos aire arriba */
+.mobile-nav a{ font-size:16px; }         /* legible */
+.mobile-actions{
+  margin-top:auto;
+  display:flex; flex-direction:column; gap:10px;
+  padding-bottom: max(16px, env(safe-area-inset-bottom)); /* respeta notch */
+}
+.mobile-actions .btn{ height:48px; align-items:center; display:flex; justify-content:center; }
+
+/* === Header layout desktop === */
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:6px 0; flex-wrap:nowrap;
+}
+.actions{ margin-left:auto; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+
