@@ -86,9 +86,7 @@
 
     <!-- Acciones (derecha en desktop) -->
     <div class="actions">
-      <a class="btn js-contact" href="#contact">
-        <span class="t-en">Contact</span><span class="t-es">Contacto</span>
-      </a>
+      <a class="btn js-contact" href="#contact"><span class="t-en">Contact</span><span class="t-es">Contacto</span></a>
       <a class="btn" href="tel:+15105429099" aria-label="Call (510) 542-9099">(510) 542-9099</a>
       <button class="btn lang-toggle" id="langToggle" aria-label="Switch language (ES)">EN/ES</button>
     </div>
@@ -118,7 +116,6 @@
       <a class="btn" href="tel:+15105429099">(510) 542-9099</a>
     </div>
   </div>
-
   </header>
 
 
@@ -700,7 +697,7 @@
 <!-- GA4 custom event tracking for CTAs (único) -->
 <script>
 (function(){
-  function track(selector, eventName){
+  function track(selector, eventName)<div class="mobile-menu" id="mobileMenu" hidden>
     document.querySelectorAll(selector).forEach(el=>{
       el.addEventListener('click', ()=>{
         if (window.gtag) gtag('event', eventName, { label: el.href || el.textContent });
@@ -777,6 +774,5 @@
   closeBtn.addEventListener('click', closeMenu, {passive:true});
 })();
 </script>
-
 </body>
 </html>
