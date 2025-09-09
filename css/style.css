@@ -383,4 +383,60 @@ header{
 .mobile-menu{ padding-top: max(20px, env(safe-area-inset-top)); }
 .mobile-actions{ padding-bottom: max(16px, env(safe-area-inset-bottom)); }
 
+/* === FIX HAMBURGUESA: rayas (no puntitos) === */
+.menu-toggle{
+  display:inline-flex !important;
+  flex-direction:column;              /* <— apila vertical */
+  align-items:center; justify-content:center;
+  gap:6px;
+  width:42px; height:42px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--card);
+}
+.menu-toggle > span{
+  display:block !important;
+  width:24px !important;              /* largo de la raya */
+  height:2px !important;              /* grosor */
+  background:var(--txt) !important;
+  border-radius:2px !important;       /* sin círculos */
+  line-height:0;                      /* evita offsets raros */
+}
+
+/* === MENU MÓVIL: que se vea la lista completa === */
+.mobile-menu{                         /* contenedor del overlay */
+  position:fixed; inset:0; z-index:100;
+  display:flex; flex-direction:column;
+  gap:20px; padding:20px;
+  background:color-mix(in oklab, var(--bg), black 10%);
+  backdrop-filter: blur(8px) saturate(140%);
+}
+.mobile-menu[hidden]{ display:none; }
+
+.mobile-nav{ flex:1; overflow:auto; } /* <— toma alto disponible */
+.mobile-nav ul{
+  list-style:none; margin:0; padding:24px 0 0;
+  display:flex; flex-direction:column; gap:12px;
+}
+.mobile-nav a{
+  display:block; padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,.02);
+  color:var(--txt);
+}
+
+.mobile-actions{
+  margin-top:auto; display:flex; flex-direction:column; gap:10px;
+  padding-bottom:max(16px, env(safe-area-inset-bottom));
+}
+.mobile-actions .btn{ width:100%; height:48px; align-items:center; justify-content:center; }
+
+/* — Opcional: fuerza hamburguesa en teléfonos (portrait/landscape) — */
+@media (hover:none) and (pointer:coarse){
+  header nav{ display:none !important; }
+  .actions{ display:none !important; }
+  .menu-toggle{ display:inline-flex !important; margin-left:auto; }
+}
+
 
