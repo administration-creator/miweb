@@ -542,3 +542,27 @@ header{
 .menu-toggle{display:inline-flex !important; flex-direction:column; gap:6px;}
 .menu-toggle > span{width:24px !important; height:2px !important; border-radius:2px !important;}
 
+/* === FORZAR COMPORTAMIENTO CORRECTO === */
+/* Base: por defecto, hamburguesa oculta */
+.menu-toggle{ display:none; }
+
+/* DESKTOP/LAPTOP (>=1025px): menú normal + acciones; sin hamburguesa */
+@media (min-width:1025px){
+  .nav > nav{ display:block !important; }   /* menú del header visible */
+  .actions{ display:flex !important; }      /* acciones visibles */
+  .menu-toggle{ display:none !important; }  /* NO hamburguesa */
+  #mobileMenu{ display:none !important; }   /* sin overlay */
+}
+
+/* PHONES & TABLETS (<=1024px): solo hamburguesa; menú del header oculto */
+@media (max-width:1024px){
+  .nav > nav{ display:none !important; }    /* oculta el menú del header */
+  .actions{ display:none !important; }      /* oculta acciones de la barra */
+  .menu-toggle{ display:inline-flex !important; margin-left:auto; }
+}
+
+/* Anti-fugas: el nav del OVERLAY NUNCA se oculta */
+#mobileMenu nav,
+#mobileMenu .mobile-nav{ display:block !important; }
+#mobileMenu .mobile-nav{ flex:1 !important; overflow:auto !important; }
+
