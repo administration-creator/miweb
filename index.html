@@ -64,22 +64,25 @@
 <style>
   /* Desktop (>=1025px): menú visible, sin hamburguesa */
   @media (min-width:1025px){
-    header nav{display:block !important;}
-    .actions{display:flex !important;}
-    .menu-toggle{display:none !important;}
-    #mobileMenu{display:none !important;}
+  .nav > nav{display:block !important;}   /* muestra el nav del header (desktop) */
+  .actions{display:flex !important;}
+  .menu-toggle{display:none !important;}
+  #mobileMenu{display:none !important;}
+}
+@media (max-width:1024px){
+  .nav > nav{display:none !important;}    /* oculta ese nav en móvil */
+  .actions{display:none !important;}
+  .menu-toggle{
+    display:inline-flex !important; margin-left:auto;
+    width:42px;height:42px;border:1px solid var(--border);border-radius:10px;background:var(--card);
+    flex-direction:column;gap:6px;align-items:center;justify-content:center;
   }
-  /* Mobile/Tablet (<=1024px): solo hamburguesa; oculta menú/acciones del header */
-  @media (max-width:1024px){
-    header nav{display:none !important;}
-    .actions{display:none !important;}
-    .menu-toggle{
-      display:inline-flex !important; margin-left:auto;
-      width:42px;height:42px;border:1px solid var(--border);border-radius:10px;background:var(--card);
-      flex-direction:column;gap:6px;align-items:center;justify-content:center;
-    }
-    .menu-toggle>span{width:24px;height:2px;background:var(--txt);border-radius:2px;}
-  }
+  .menu-toggle>span{width:24px;height:2px;background:var(--txt);border-radius:2px;}
+}
+/* MUY IMPORTANTE: el nav del overlay NUNCA se oculta */
+#mobileMenu nav,
+#mobileMenu .mobile-nav{ display:block !important; }
+
   /* MUY IMPORTANTE: el nav del overlay NUNCA se oculta */
   #mobileMenu nav{display:block !important;}
 </style>
