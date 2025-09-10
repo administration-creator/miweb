@@ -61,6 +61,28 @@
     function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Q23WH56BEB');
   </script>
 <link rel="stylesheet" href="css/style.css?=23">
+<style>
+  /* Desktop (>=1025px): menú visible, sin hamburguesa */
+  @media (min-width:1025px){
+    header nav{display:block !important;}
+    .actions{display:flex !important;}
+    .menu-toggle{display:none !important;}
+    #mobileMenu{display:none !important;}
+  }
+  /* Mobile/Tablet (<=1024px): solo hamburguesa; oculta menú/acciones del header */
+  @media (max-width:1024px){
+    header nav{display:none !important;}
+    .actions{display:none !important;}
+    .menu-toggle{
+      display:inline-flex !important; margin-left:auto;
+      width:42px;height:42px;border:1px solid var(--border);border-radius:10px;background:var(--card);
+      flex-direction:column;gap:6px;align-items:center;justify-content:center;
+    }
+    .menu-toggle>span{width:24px;height:2px;background:var(--txt);border-radius:2px;}
+  }
+  /* MUY IMPORTANTE: el nav del overlay NUNCA se oculta */
+  #mobileMenu nav{display:block !important;}
+</style>
 
 </head>
 <body>
@@ -697,33 +719,18 @@
 <!-- GA4 custom event tracking for CTAs (único) -->
 <script>
 (function(){
-  function track(selector, eventName)<div class="mobile-menu" id="mobileMenu" hidden>
+  function track(selector, eventName){
     document.querySelectorAll(selector).forEach(el=>{
       el.addEventListener('click', ()=>{
         if (window.gtag) gtag('event', eventName, { label: el.href || el.textContent });
-      }, {passive:true});
+      }, { passive:true });
     });
   }
-
-  // CTAs principales
   track('a[href*="calendly.com/administration-titanopsagency/ppl-call"]','cta_calendly');
-  track('a.js-contact','cta_contact');                  // todos los "Contact" que bajan al form
+  track('a.js-contact','cta_contact');
   track('a[data-plan="monthly-997"]','cta_subscribe_997');
   track('a[data-plan="setup-349"]','cta_checkout_349');
-
-  // Opcional: clics a teléfono
   track('a[href^="tel:"]','cta_call');
-})();
-</script>
-<!-- UTM & GCLID tracking -->
-<script>
-(function(){
-  const qs = new URLSearchParams(location.search);
-  const setIf = (n) => {
-    const el = document.querySelector('form[name="lead"] [name="'+n+'"]');
-    if (el) el.value = qs.get(n) || '';
-  };
-  ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid"].forEach(setIf);
 })();
 </script>
 <script>
