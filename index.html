@@ -784,7 +784,13 @@
   closeBtn.addEventListener('click', closeMenu, {passive:true});
 // después de closeBtn.addEventListener('click', closeMenu, {passive:true});
 menu.querySelectorAll('.mobile-nav a')?.forEach(a => a.addEventListener('click', closeMenu, {passive:true}));
-
+/* 👇 NUEVO: cerrar al tocar cualquier enlace del overlay (menú + acciones) */
+  menu.querySelectorAll('.mobile-nav a, .mobile-actions a').forEach(a=>{
+    a.addEventListener('click', () => {
+      // Deja que el navegador navegue y cierra el panel justo después
+      setTimeout(closeMenu, 0);
+    }, {passive:true});
+  });
 })();
 </script>
 </body>
