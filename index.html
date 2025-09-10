@@ -771,26 +771,38 @@
 })();
 </script>
 <script>
-(function(){
+(function () {
   const toggle = document.getElementById('menuToggle');
   const menu   = document.getElementById('mobileMenu');
-  if(!toggle || !menu) return;
+  if (!toggle || !menu) return;
   const closeBtn = menu.querySelector('.menu-close');
+  const body = document.body;
 
-  const openMenu  = () => { menu.hidden = false; toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
-  const closeMenu = () => { menu.hidden = true;  toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+  const openMenu  = () => {
+    menu.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+    body.style.overflow = 'hidden';
+    body.classList.add('menu-open');      // <- señal para CSS
+  };
+  const closeMenu = () => {
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    body.style.overflow = '';
+    body.classList.remove('menu-open');   // <- limpia señal
+  };
 
-  toggle.addEventListener('click', ()=> menu.hidden ? openMenu() : closeMenu(), {passive:true});
-  closeBtn.addEventListener('click', closeMenu, {passive:true});
-// después de closeBtn.addEventListener('click', closeMenu, {passive:true});
-menu.querySelectorAll('.mobile-nav a')?.forEach(a => a.addEventListener('click', closeMenu, {passive:true}));
-/* 👇 NUEVO: cerrar al tocar cualquier enlace del overlay (menú + acciones) */
-  menu.querySelectorAll('.mobile-nav a, .mobile-actions a').forEach(a=>{
-    a.addEventListener('click', () => {
-      // Deja que el navegador navegue y cierra el panel justo después
-      setTimeout(closeMenu, 0);
-    }, {passive:true});
-  });
+  toggle.addEventListener('click', () => menu.hidden ? openMenu() : closeMenu(), { passive: true });
+  closeBtn?.addEventListener('click', closeMenu, { passive: true });
+
+  // Cierra el overlay al tocar cualquier enlace del menú (hash, tel:, mailto:, http…)
+  menu.addEventListener('click', (ev) => {
+    const a = ev.target.closest('a');
+    if (!a) return;
+    setTimeout(closeMenu, 0); // deja que Safari procese el tap y cierra
+  }, { passive: true });
+
+  // Extra: cierra con ESC
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) closeMenu(); });
 })();
 </script>
 </body>
