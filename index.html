@@ -782,6 +782,9 @@
 
   toggle.addEventListener('click', ()=> menu.hidden ? openMenu() : closeMenu(), {passive:true});
   closeBtn.addEventListener('click', closeMenu, {passive:true});
+// después de closeBtn.addEventListener('click', closeMenu, {passive:true});
+menu.querySelectorAll('.mobile-nav a')?.forEach(a => a.addEventListener('click', closeMenu, {passive:true}));
+
 })();
 </script>
 </body>
