@@ -644,6 +644,7 @@ header{
 .menu-open .chat-widget{ display:none !important; }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* === FIX MENÚ MÓVIL (iPhone/modern iOS) === */
 
 /* Botón hamburguesa (oculto por defecto, visible en móvil) */
@@ -726,5 +727,7 @@ body.menu-open{ touch-action:none; overscroll-behavior:none; }
 .to-custom { margin-top: 28px; }
 .to-pitch { margin-top: 16px; }
 
+=======
+>>>>>>> parent of c5a1d6a (Update style.css)
 =======
 >>>>>>> parent of c5a1d6a (Update style.css)
