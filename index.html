@@ -60,7 +60,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Q23WH56BEB');
   </script>
-<link rel="stylesheet" href="css/style.css?=70">
+<link rel="stylesheet" href="css/style.css?=62">
 <style>
   /* Desktop (>=1025px): menú visible, sin hamburguesa */
   @media (min-width:1025px){
@@ -122,8 +122,7 @@
     </button>
   </div>
 
-  </header>
-<!-- Overlay del menú móvil -->
+  <!-- Overlay del menú móvil -->
   <div class="mobile-menu" id="mobileMenu" hidden>
     <button class="menu-close" aria-label="Close menu">×</button>
 
@@ -142,6 +141,7 @@
       <a class="btn" href="tel:+15105429099">(510) 542-9099</a>
     </div>
   </div>
+  </header>
 
 
   <main id="main">
@@ -738,31 +738,54 @@
 </script>
 <script>
 (function(){
+  function track(selector, eventName){
+    document.querySelectorAll(selector).forEach(a=>{
+      a.addEventListener('click', ()=> {
+        if (window.gtag) gtag('event', eventName, {label: a.href || a.textContent});
+      }, {passive:true});
+    });
+  }
+  track('a[href*="calendly.com/administration-titanopsagency/ppl-call"]','cta_calendly');
+  track('a[href^="https://wa.me"]','cta_whatsapp');
+  track('a[data-plan="monthly-997"]','cta_subscribe_997');
+  track('a[data-plan="setup-349"]','cta_checkout_349');
+  /* nuevo: */
+  track('a.js-contact','cta_contact');
+})();
+</script>
+<script>
+(function () {
   const toggle = document.getElementById('menuToggle');
   const menu   = document.getElementById('mobileMenu');
-  if(!toggle || !menu) return;
+  if (!toggle || !menu) return;
   const closeBtn = menu.querySelector('.menu-close');
+  const body = document.body;
 
   const openMenu  = () => {
     menu.hidden = false;
-    toggle.setAttribute('aria-expanded','true');
-    document.body.classList.add('menu-open');
-    document.body.style.overflow = 'hidden'; /* iOS */
+    toggle.setAttribute('aria-expanded', 'true');
+    body.style.overflow = 'hidden';
+    body.classList.add('menu-open');      // <- señal para CSS
   };
   const closeMenu = () => {
     menu.hidden = true;
-    toggle.setAttribute('aria-expanded','false');
-    document.body.classList.remove('menu-open');
-    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    body.style.overflow = '';
+    body.classList.remove('menu-open');   // <- limpia señal
   };
 
-  toggle.addEventListener('click', ()=> menu.hidden ? openMenu() : closeMenu(), {passive:true});
-  closeBtn?.addEventListener('click', closeMenu, {passive:true});
+  toggle.addEventListener('click', () => menu.hidden ? openMenu() : closeMenu(), { passive: true });
+  closeBtn?.addEventListener('click', closeMenu, { passive: true });
 
-  /* Cierra al tocar cualquier link (menú + acciones) */
-  menu.querySelectorAll('.mobile-nav a, .mobile-actions a').forEach(a=>{
-    a.addEventListener('click', ()=> { setTimeout(closeMenu,0); }, {passive:true});
-  });
+  // Cierra el overlay al tocar cualquier enlace del menú (hash, tel:, mailto:, http…)
+  menu.addEventListener('click', (ev) => {
+    const a = ev.target.closest('a');
+    if (!a) return;
+    setTimeout(closeMenu, 0); // deja que Safari procese el tap y cierra
+  }, { passive: true });
+
+  // Extra: cierra con ESC
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) closeMenu(); });
 })();
 </script>
 </body>
