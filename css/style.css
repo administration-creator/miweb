@@ -693,3 +693,35 @@ header{
 /* Evita scroll del fondo cuando está abierto (iOS) */
 body.menu-open{ touch-action:none; overscroll-behavior:none; }
 
+/* === PRICING · TITAN OPS (scoped) === */
+.to-container { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
+.to-pricing-title { font-size: 2rem; margin: 0 0 6px; }
+.to-pricing-sub { opacity: .8; margin-bottom: 20px; }
+
+.to-plans-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .to-plans-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.to-plan { border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px; background: #fff; }
+.to-plan--featured { border-color: #ef4444; box-shadow: 0 8px 24px rgba(239,68,68,.15); }
+.to-plan-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.to-badge { font-size: 20px; }
+.to-plan-name { font-size: 1.25rem; margin: 0; }
+.to-plan-tag { margin: 0; opacity: .8; }
+
+.to-plan-desc { margin: 12px 0; padding-left: 18px; }
+.to-features { margin: 12px 0 16px; padding-left: 18px; }
+.to-features li { margin: 6px 0; }
+
+.to-price { font-size: 2rem; font-weight: 700; margin: 10px 0 16px; }
+.to-currency { font-size: 1.2rem; vertical-align: super; }
+.to-per { font-size: .95rem; opacity: .9; margin-left: 6px; }
+
+.to-cta { display: inline-block; text-decoration: none; border-radius: 12px; padding: 10px 16px; border: 1px solid #111827; }
+.to-cta:hover { transform: translateY(-1px); }
+.to-cta--ghost { background: transparent; }
+
+.to-addons { margin-top: 24px; }
+.to-addons-list { padding-left: 18px; }
+.to-custom { margin-top: 28px; }
+.to-pitch { margin-top: 16px; }
+
