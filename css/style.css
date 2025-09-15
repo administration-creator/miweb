@@ -696,3 +696,21 @@ header{
 
 /* Evita scroll del fondo cuando está abierto (iOS) */
 body.menu-open{ touch-action:none; overscroll-behavior:none; }
+
+/* == Contact tidy (no rompe nada existente) == */
+#contact .contact-grid{
+  display:grid;
+  grid-template-columns: minmax(300px,1fr) minmax(340px,1fr);
+  gap:20px; align-items:start;
+}
+@media (max-width: 900px){
+  #contact .contact-grid{ grid-template-columns: 1fr; }
+}
+
+/* que cada label baje a su línea y tenga espacio */
+#contact .contact-card label{ display:block; margin:12px 0 6px; }
+/* el texto del label con respirito */
+#contact .contact-card label > span{ display:inline-block; margin-bottom:6px; }
+
+/* separa un poquito el botón (form) */
+#contact .contact-card .btn{ margin-top:10px; }
