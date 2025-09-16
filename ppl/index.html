@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Pago por Lead en Los Ángeles — Titan Ops</title>
+  <meta name="description" content="Pagas solo por contactos reales en tu zona. Retainer bajo + pago por lead. Ad spend directo a Google/Meta. Bilingüe ES/EN. WhatsApp en un clic."/>
+  <meta property="og:title" content="Pago por Lead en Los Ángeles — Titan Ops"/>
+  <meta property="og:description" content="Pagas solo por contactos reales. Retainer bajo + $/lead. Ad spend directo a Google/Meta."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://titanopsagency.com/ppl"/>
+  <meta property="og:image" content="https://titanopsagency.com/og-ppl.jpg"/>
+  <meta name="theme-color" content="#7c3aed"/>
+  <style>
+    /* ===== Modern palette & UI ===== */
+    :root{
+      --ink:#0f172a;           /* slate-900 */
+      --muted:#6b7280;         /* gray-500 */
+      --line:rgba(148,163,184,.25);
+      --bg:#ffffff;
+      --pri1:#7c3aed;          /* violet-600 */
+      --pri2:#06b6d4;          /* cyan-500 */
+      --acc:#22c55e;           /* emerald-500 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:56px 16px}
+    .section{padding:72px 16px}
+    .h1{font-size:clamp(34px,5vw,52px);font-weight:900;letter-spacing:-.02em;margin:0 0 8px}
+    .h2{font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.01em;margin:0 0 8px}
+    .h3{font-size:18px;font-weight:800;margin:0 0 4px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .g-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    @media(max-width:960px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
+
+    /* Cards with glass effect */
+    .card{background:rgba(255,255,255,.9);backdrop-filter:saturate(160%) blur(8px);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    .card:hover{box-shadow:0 18px 40px rgba(2,6,23,.09);transform:translateY(-2px);transition:.25s ease}
+
+    /* Badges & buttons */
+    .badge{display:inline-block;background:linear-gradient(135deg,var(--pri1),var(--pri2));color:#fff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:900;box-shadow:0 4px 14px rgba(124,58,237,.25)}
+    .cta{display:inline-flex;gap:10px;align-items:center;padding:12px 18px;border-radius:12px;font-weight:900}
+    .cta.primary{color:#fff;background:linear-gradient(135deg,var(--pri1),var(--pri2));box-shadow:0 10px 24px rgba(124,58,237,.25)}
+    .cta.primary:hover{filter:brightness(1.05);transform:translateY(-1px);transition:.25s ease}
+    .cta.ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.7)}
+    .cta.ghost:hover{border-color:rgba(15,23,42,.35)}
+    .cta.wa{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;box-shadow:0 10px 24px rgba(34,197,94,.25)}
+
+    .list{list-style:none;padding:0;margin:8px 0 0}
+    .list li{margin:10px 0;display:flex;gap:8px}
+    .foot{font-size:12px;color:#64748b;margin-top:12px}
+    .kicker{font-size:13px;color:#2563eb;font-weight:900;letter-spacing:.02em;margin-bottom:8px}
+    .hr{height:1px;background:var(--line);border:0;margin:24px 0}
+
+    /* Sticky banner */
+    .banner{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,var(--pri1),var(--pri2));color:#fff}
+    .banner>.wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 16px}
+    .banner .cta{padding:8px 14px;border-radius:999px;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff}
+    .banner .close{background:transparent;border:0;color:#e2e8f0;font-size:22px;line-height:1}
+    .banner .close[disabled]{opacity:.45;cursor:not-allowed}
+
+    /* Language toggle */
+    .lang-toggle{display:flex;gap:8px}
+    .lang-toggle button{border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.2);padding:6px 10px;border-radius:999px;font-weight:900;color:#fff;cursor:pointer}
+    .lang-toggle button.active{background:#fff;color:#0f172a}
+
+    /* Show/Hide by language */
+    [data-lang="es"] .en{display:none}
+    [data-lang="en"] .es{display:none}
+
+    /* HERO with gradient orbs */
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-10% -20% auto -20%;height:60vh;pointer-events:none;background:
+      radial-gradient(600px 300px at 20% 20%, rgba(124,58,237,.35) 0%, transparent 60%),
+      radial-gradient(500px 250px at 80% 10%, rgba(6,182,212,.35) 0%, transparent 60%),
+      radial-gradient(600px 300px at 60% 90%, rgba(34,197,94,.25) 0%, transparent 60%);
+      filter:blur(32px);z-index:-1}
+
+    /* Form */
+    form{display:grid;gap:12px}
+    input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff}
+    input:focus,select:focus,textarea:focus{outline:0;border-color:rgba(124,58,237,.45);box-shadow:0 0 0 4px rgba(124,58,237,.15)}
+    button[type=submit]{background:linear-gradient(135deg,var(--pri1),var(--pri2));color:#fff;border:0;padding:12px 18px;border-radius:12px;font-weight:900;cursor:pointer;box-shadow:0 10px 24px rgba(124,58,237,.25)}
+    small.note{display:block;color:#64748b}
+
+    /* Footer */
+    footer{background:#0b1220;color:#cbd5e1}
+
+    /* ===== Dark theme overrides ===== */
+    [data-theme="dark"]{--bg:#0b1220;--ink:#e5e7eb;--muted:#94a3b8;--line:rgba(148,163,184,.16)}
+    [data-theme="dark"] body{background:var(--bg);color:var(--ink)}
+    [data-theme="dark"] .card{background:rgba(2,6,23,.65);border-color:rgba(148,163,184,.22);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+    [data-theme="dark"] .cta.ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border-color:rgba(148,163,184,.25)}
+    [data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{background:#0f172a;color:#e5e7eb;border-color:rgba(148,163,184,.25)}
+    [data-theme="dark"] .muted{color:#94a3b8}
+    [data-theme="dark"] footer{background:#030712;color:#cbd5e1}
+    /* Theme toggle */
+    .theme-toggle{border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.2);padding:6px 10px;border-radius:999px;font-weight:900;color:#fff;cursor:pointer}
+  </style>
+</head>
+<body>
+  <!-- Banner sticky bilingüe -->
+  <div class="banner">
+    <div class="wrap">
+      <div>
+        <span class="es">Pagas <strong>solo por contactos reales</strong>.</span>
+        <span class="en">Pay <strong>only for real contacts</strong>.</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="lang-toggle" aria-label="Language toggle">
+          <button class="active" data-set-lang="es" type="button">ES</button>
+          <button data-set-lang="en" type="button">EN</button>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+        <!-- WhatsApp to your number -->
+        <a class="cta" href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20probar%20PPL." target="_blank" rel="noopener">WhatsApp</a>
+        <button id="banner-close" class="close" aria-label="Pinned" disabled title="Fixed">×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="section hero">
+    <div class="wrap">
+      <span class="badge">PPL — Pay Per Lead</span>
+      <h1 class="h1">
+        <span class="es">Clientes reales, sin contratos largos</span>
+        <span class="en">Real customers, no long-term contracts</span>
+      </h1>
+      <p class="muted" style="max-width:760px">
+        <span class="es">Pagas <strong>solo por contactos reales</strong> en tu zona. Tu presupuesto de anuncios se paga <strong>directo</strong> a Google/Meta; nuestro servicio es <strong>retainer bajo + $/lead</strong>.</span>
+        <span class="en">Pay <strong>only for real contacts</strong> in your area. Your ad spend is paid <strong>directly</strong> to Google/Meta; our service is <strong>low retainer + $/lead</strong>.</span>
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <a href="#pricing" class="cta primary es">Empezar PPL →</a>
+        <a href="#pricing" class="cta primary en">Start PPL →</a>
+        <a href="#how" class="cta ghost es">Cómo trabajamos</a>
+        <a href="#how" class="cta ghost en">How we work</a>
+        <a class="cta wa" href="https://wa.me/13109087414?text=Hola%20Titan%20Ops%2C%20quiero%20probar%20PPL." target="_blank" rel="noopener">WhatsApp ahora</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CÓMO TRABAJAMOS -->
+  <section id="how" class="section">
+    <div class="wrap">
+      <div class="kicker"><span class="es">Proceso</span><span class="en">Process</span></div>
+      <h2 class="h2"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></h2>
+      <div class="grid g-4">
+        <div class="card"><div class="h3"><span class="es">1) Descubrimiento $0</span><span class="en">1) Free discovery</span></div><p class="muted"><span class="es">Objetivo, zonas y oferta bilingüe (ES/EN).</span><span class="en">Goals, service areas and a bilingual offer (ES/EN).</span></p></div>
+        <div class="card"><div class="h3"><span class="es">2) Setup rápido</span><span class="en">2) Fast setup</span></div><p class="muted"><span class="es">Landing + tracking (GA4/GTM/Pixel/CAPI). Router y anti‑spam.</span><span class="en">Landing + tracking (GA4/GTM/Pixel/CAPI). Router & anti‑spam.</span></p></div>
+        <div class="card"><div class="h3"><span class="es">3) Lanzamiento</span><span class="en">3) Launch</span></div><p class="muted"><span class="es"><strong>Retainer + $/lead</strong>. El Ads spend lo pagas directo a Google/Meta. Search/Meta y LSA si aplica.</span><span class="en"><strong>Low retainer + $/lead</strong>. Ad spend is paid directly to Google/Meta. Search/Meta and LSA if eligible.</span></p></div>
+        <div class="card"><div class="h3"><span class="es">4) Escala</span><span class="en">4) Scale</span></div><p class="muted"><span class="es">Entrega en tiempo real (WhatsApp/Email), optimización y reportes según plan.</span><span class="en">Real‑time delivery (WhatsApp/Email), optimization & reporting by plan.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section" style="background:linear-gradient(180deg, rgba(124,58,237,.05), transparent)">
+    <div class="wrap">
+      <div class="kicker"><span class="es">Planes</span><span class="en">Plans</span></div>
+      <h2 class="h2"><span class="es">Retainer bajo + pago por lead</span><span class="en">Low retainer + pay per lead</span></h2>
+      <div class="grid g-3">
+        <div class="card">
+          <div class="badge"><span class="es">Entrada</span><span class="en">Starter</span></div>
+          <h3 class="h3" style="margin-top:8px"><span class="es">Express H — $300/mes + $25/lead</span><span class="en">Express H — $300/mo + $25/lead</span></h3>
+          <ul class="list">
+            <li>💻 1 landing + tracking</li>
+            <li>🎯 <span class="es">Activación inicial (set & go)</span><span class="en">Initial activation (set & go)</span></li>
+            <li>📩 <strong><span class="es">Entrega de leads</span><span class="en">Lead delivery</span></strong> (<span class="es">sin reportes/optimización</span><span class="en">no reports/optimization</span>)</li>
+          </ul>
+          <div class="foot"><span class="es">Ads spend no incluido (pago directo). Lead calificado abajo.</span><span class="en">Ad spend not included (paid directly). Qualified lead below.</span></div>
+        </div>
+        <div class="card" style="border-width:2px;border-color:rgba(124,58,237,.45)">
+          <div class="badge"><span class="es">Recomendado</span><span class="en">Recommended</span></div>
+          <h3 class="h3" style="margin-top:8px"><span class="es">Growth H — $500/mes + $22/lead</span><span class="en">Growth H — $500/mo + $22/lead</span></h3>
+          <ul class="list">
+            <li>💻 <span class="es">Hasta 3 landings + A/B</span><span class="en">Up to 3 landings + A/B</span></li>
+            <li>🔁 <strong><span class="es">Optimización semanal</span><span class="en">Weekly optimization</span></strong></li>
+            <li>📊 <strong><span class="es">Reporte mensual</span><span class="en">Monthly report</span></strong> + <span class="es">creativos básicos</span><span class="en">basic creatives</span></li>
+            <li>📩 <strong><span class="es">Entrega de leads</span><span class="en">Lead delivery</span></strong> <span class="es">con QA</span><span class="en">with QA</span></li>
+          </ul>
+          <div class="foot"><span class="es">Ads spend no incluido (pago directo). Lead calificado abajo.</span><span class="en">Ad spend not included (paid directly). Qualified lead below.</span></div>
+        </div>
+        <div class="card">
+          <div class="badge"><span class="es">Escala</span><span class="en">Scale</span></div>
+          <h3 class="h3" style="margin-top:8px"><span class="es">Scale H — $800/mes + $20/lead</span><span class="en">Scale H — $800/mo + $20/lead</span></h3>
+          <ul class="list">
+            <li>🧪 <span class="es">Funnel avanzado + pruebas</span><span class="en">Advanced funnel + testing</span></li>
+            <li>🔁 <strong><span class="es">Optimización diaria</span><span class="en">Daily optimization</span></strong> + <span class="es">SEO local</span><span class="en">local SEO</span></li>
+            <li>📊 <strong><span class="es">Reporte quincenal</span><span class="en">Biweekly report</span></strong> + <span class="es">call</span><span class="en">strategy call</span></li>
+            <li>🎬 <span class="es">Creativos premium (video/UGC)</span><span class="en">Premium creatives (video/UGC)</span></li>
+            <li>📩 <strong><span class="es">Entrega de leads</span><span class="en">Lead delivery</span></strong> <span class="es">con scoring</span><span class="en">with scoring</span></li>
+          </ul>
+          <div class="foot"><span class="es">Ads spend no incluido (pago directo). Lead calificado abajo.</span><span class="en">Ad spend not included (paid directly). Qualified lead below.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD + COST NOTE -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-2">
+        <div class="card">
+          <h3 class="h3"><span class="es">Definición de lead calificado</span><span class="en">Qualified lead definition</span></h3>
+          <ul class="list">
+            <li>✅ <span class="es">Nombre + teléfono o email</span><span class="en">Name + phone or email</span></li>
+            <li>📍 <span class="es">Dentro de zona acordada</span><span class="en">Within agreed service area</span></li>
+            <li>⏰ <span class="es">En horario hábil</span><span class="en">During business hours</span></li>
+            <li>🗣️ <span class="es">Intención real (form, llamada o WhatsApp)</span><span class="en">Real intent (form, call, WhatsApp)</span></li>
+            <li>🚫 <span class="es">Spam/duplicados se reemplazan (7 días)</span><span class="en">Spam/duplicates replaced (7 days)</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="h3"><span class="es">Nota de costos</span><span class="en">Cost note</span></h3>
+          <p class="muted"><span class="es">El <strong>presupuesto de anuncios</strong> se paga <strong>directo</strong> a Google/Meta por el cliente. Nuestro servicio es <strong>retainer bajo + pago por lead</strong> e independiente del gasto en Ads.</span><span class="en"><strong>Ad spend</strong> is paid <strong>directly</strong> to Google/Meta by the client. Our service is <strong>low retainer + pay per lead</strong> and independent from ad spend.</span></p>
+          <p class="foot"><span class="es">Propiedad: la landing y los leads son del cliente; las automatizaciones/IA/reportes son IP de Titan Ops y operan con licencia mientras el plan esté activo.</span><span class="en">Ownership: the landing and leads belong to the client; automations/AI/reports are Titan Ops IP, licensed while the plan is active.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRO MOTOR -->
+  <section class="section" style="background:linear-gradient(180deg, transparent, rgba(6,182,212,.06))">
+    <div class="wrap">
+      <div class="kicker"><span class="es">Bajo el cofre</span><span class="en">Under the hood</span></div>
+      <h2 class="h2"><span class="es">Nuestro motor (cómo generamos tus leads)</span><span class="en">Our engine (how we generate your leads)</span></h2>
+      <div class="grid g-3">
+        <div class="card"><div class="h3">⚡ <span class="es">Captura multicanal</span><span class="en">Multichannel capture</span></div><p class="muted"><span class="es">Web, llamada y WhatsApp en tiempo real. Formularios con validación.</span><span class="en">Web, phone and WhatsApp in real time. Validated forms.</span></p></div>
+        <div class="card"><div class="h3">🧠 <span class="es">IA + Anti‑spam</span><span class="en">AI + Anti‑spam</span></div><p class="muted"><span class="es">Verificación, deduplicado y scoring de calidad.</span><span class="en">Verification, deduplication and quality scoring.</span></p></div>
+        <div class="card"><div class="h3">🔍 <span class="es">Medición robusta</span><span class="en">Robust measurement</span></div><p class="muted"><span class="es">GA4/GTM, Conversions API y eventos server‑side.</span><span class="en">GA4/GTM, Conversions API and server-side events.</span></p></div>
+      </div>
+      <p class="foot"><span class="es">Este motor es propiedad de Titan Ops y se usa con licencia mientras el plan esté activo.</span><span class="en">This engine is Titan Ops IP licensed while the plan is active.</span></p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="grid g-2">
+        <div>
+          <div class="kicker"><span class="es">Agenda</span><span class="en">Book</span></div>
+          <h2 class="h2"><span class="es">Agenda tu llamada $0</span><span class="en">Book a free call</span></h2>
+          <p class="muted"><span class="es">Cuéntanos tu industria y zona. Te mostramos cómo funcionan nuestros <strong>leads calificados</strong>.</span><span class="en">Tell us your industry and area. We’ll show you how our <strong>qualified leads</strong> work.</span></p>
+          <div class="hr"></div>
+          <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="lead" />
+  <p style="display:none">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <div class="grid g-2">
+    <div>
+      <label class="es">Nombre</label><label class="en">Name</label>
+      <input name="name" required />
+    </div>
+    <div>
+      <label class="es">Teléfono</label><label class="en">Phone</label>
+      <input name="phone" required />
+    </div>
+  </div>
+
+  <div class="grid g-2">
+    <div>
+      <label class="es">Email</label><label class="en">Email</label>
+      <input type="email" name="email" />
+    </div>
+    <div>
+      <label class="es">Ciudad/Zona</label><label class="en">City/Area</label>
+      <input name="area" required />
+    </div>
+  </div>
+
+  <div>
+    <label class="es">Industria</label><label class="en">Industry</label>
+    <select name="industry" required>
+      <option value="">—</option>
+      <option>Plumber</option><option>HVAC</option><option>Junk Removal</option>
+      <option>Electrician</option><option>Legal</option><option>Auto Detailing</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="es">Mensaje</label><label class="en">Message</label>
+    <textarea name="message" rows="4"></textarea>
+  </div>
+
+  <!-- UTM (las rellena tu JS existente) -->
+  <input data-utm name="utm_source" type="hidden" />
+  <input data-utm name="utm_medium" type="hidden" />
+  <input data-utm name="utm_campaign" type="hidden" />
+
+  <small class="note es">Al enviar aceptas recibir contacto por WhatsApp/llamada/email.
+    Leads inválidos (spam/duplicados/fuera de zona) se reemplazan dentro de 7 días.</small>
+  <small class="note en">By submitting you agree to be contacted via WhatsApp/call/email.
+    Invalid leads (spam/duplicates/out of area) are replaced within 7 days.</small>
+
+  <button type="submit"><span class="es">Enviar</span><span class="en">Send</span></button>
+</form>
+        </div>
+        <div>
+          <div class="card">
+            <div class="h3"><span class="es">FAQ rápido</span><span class="en">Quick FAQ</span></div>
+            <p class="muted"><strong class="es">¿El Ads spend está incluido?</strong><strong class="en">Is ad spend included?</strong><br/>
+              <span class="es">No. Lo pagas directo a Google/Meta. Nosotros cobramos retainer + $/lead.</span>
+              <span class="en">No. You pay it directly to Google/Meta. We charge a low retainer + $/lead.</span></p>
+            <p class="muted"><strong class="es">¿La página y los leads son míos?</strong><strong class="en">Do I own the landing & the leads?</strong><br/>
+              <span class="es">Sí. La landing y leads son tuyos. La gestión/automatizaciones y reportes operan solo con plan activo.</span>
+              <span class="en">Yes. Landing & leads are yours. Management/automations & reports run with an active plan.</span></p>
+            <p class="muted"><strong class="es">¿Pueden entrenar a mi equipo?</strong><strong class="en">Will you train our team?</strong><br/>
+              <span class="es">Sí, como add‑on (<em>Transfer & Training</em>).</span>
+              <span class="en">Yes, as an add‑on (<em>Transfer & Training</em>).</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section" style="background:#0b1220;color:#cbd5e1">
+    <div class="wrap">
+      <p style="margin:0 0 8px"><strong>Titan Ops</strong> · Los Ángeles · Oakland</p>
+      <p class="muted" style="margin:0">© <span id="y"></span> Titan Ops. <span class="es">Privacidad</span><span class="en">Privacy</span> · <span class="es">Términos</span><span class="en">Terms</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // THEME: init & toggle (prefers-color-scheme aware)
+    (function(){
+      const key='theme';
+      const root=document.documentElement;
+      const saved=localStorage.getItem(key);
+      const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme=saved || (prefersDark? 'dark':'light');
+      root.setAttribute('data-theme', theme);
+      function render(t){
+        document.querySelectorAll('.theme-toggle').forEach(btn=>{btn.setAttribute('aria-pressed',t==='dark');btn.textContent=t==='dark'?'☀️':'🌙';});
+      }
+      render(theme);
+      document.addEventListener('click',(e)=>{
+        const btn=e.target.closest('.theme-toggle');
+        if(!btn) return;
+        const t=root.getAttribute('data-theme')==='dark'?'light':'dark';
+        root.setAttribute('data-theme',t);localStorage.setItem(key,t);render(t);
+      });
+    })();
+
+    // LANG: persist
+    document.documentElement.setAttribute('data-lang', localStorage.getItem('lang')||'es');
+    document.addEventListener('click', (e)=>{
+      const btn=e.target.closest('[data-set-lang]');
+      if(!btn) return;
+      const lang=btn.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', lang);
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active', b===btn));
+    });
+
+    // DOM ready: UTM capture
+    document.addEventListener('DOMContentLoaded',()=>{
+      document.getElementById('y').textContent=new Date().getFullYear();
+      const params=new URLSearchParams(location.search);
+      document.querySelectorAll('[data-utm]').forEach(i=>{ const k=i.getAttribute('name'); if(params.get(k)) i.value=params.get(k); });
+    });
+  </script>
+
+  <!-- Schema.org FAQ (optional) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question","name": "Is ad spend included?","acceptedAnswer": {"@type": "Answer","text": "No. You pay ad spend directly to Google/Meta. We charge a low retainer + pay per lead."}},
+      {"@type": "Question","name": "Do I own the landing & the leads?","acceptedAnswer": {"@type": "Answer","text": "Yes. The landing and leads are yours. Management/automations & reports require an active plan."}}
+    ]
+  }
+  </script>
+</body>
+</html>
