@@ -724,4 +724,7 @@ body.menu-open{ touch-action:none; overscroll-behavior:none; }
   }
   .btn-ppl:hover{ filter:brightness(1.06); transform:translateY(-1px); transition:.2s ease; }
 </style>
+/* XL button para PPL (usa tus colores premium ya definidos) */
+.btn-xl{font-size:18px; padding:14px 20px; border-radius:14px}
+@media (max-width:740px){ .btn-xl{width:100%; text-align:center} }
 
