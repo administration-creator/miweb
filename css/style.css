@@ -714,3 +714,14 @@ body.menu-open{ touch-action:none; overscroll-behavior:none; }
 
 /* separa un poquito el botón (form) */
 #contact .contact-card .btn{ margin-top:10px; }
+
+<style>
+  .btn-ppl{
+    display:inline-block; padding:10px 14px; border-radius:12px;
+    font-weight:800; text-decoration:none;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4); color:#fff;
+    box-shadow:0 6px 16px rgba(124,58,237,.25);
+  }
+  .btn-ppl:hover{ filter:brightness(1.06); transform:translateY(-1px); transition:.2s ease; }
+</style>
+
