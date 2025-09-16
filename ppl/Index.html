@@ -249,34 +249,61 @@
           <h2 class="h2"><span class="es">Agenda tu llamada $0</span><span class="en">Book a free call</span></h2>
           <p class="muted"><span class="es">Cuéntanos tu industria y zona. Te mostramos cómo funcionan nuestros <strong>leads calificados</strong>.</span><span class="en">Tell us your industry and area. We’ll show you how our <strong>qualified leads</strong> work.</span></p>
           <div class="hr"></div>
-          <form name="lead" method="POST" action="https://formsubmit.co/leads@titanopsagency.com">
-            <input type="hidden" name="_captcha" value="false"/>
-            <input type="hidden" name="_template" value="table"/>
-            <input type="hidden" name="_subject" value="Nuevo lead (PPL) — Titan Ops"/>
-            <input type="text" name="_honey" style="display:none" autocomplete="off"/>
-            <div class="grid g-2">
-              <div><label class="es">Nombre</label><label class="en">Name</label><input name="name" required/></div>
-              <div><label class="es">Teléfono</label><label class="en">Phone</label><input name="phone" required/></div>
-            </div>
-            <div class="grid g-2">
-              <div><label class="es">Email</label><label class="en">Email</label><input type="email" name="email"/></div>
-              <div><label class="es">Ciudad/Zona</label><label class="en">City/Area</label><input name="area" required/></div>
-            </div>
-            <div><label class="es">Industria</label><label class="en">Industry</label>
-              <select name="industry" required>
-                <option value="">—</option>
-                <option>Plumber</option><option>HVAC</option><option>Junk Removal</option><option>Electrician</option><option>Legal</option><option>Auto Detailing</option><option>Other</option>
-              </select>
-            </div>
-            <div><label class="es">Mensaje</label><label class="en">Message</label><textarea name="message" rows="4"></textarea></div>
-            <!-- UTM fields -->
-            <input data-utm name="utm_source" type="hidden"/>
-            <input data-utm name="utm_medium" type="hidden"/>
-            <input data-utm name="utm_campaign" type="hidden"/>
-            <small class="note es">Al enviar aceptas recibir contacto por WhatsApp/llamada/email. Leads inválidos (spam/duplicados/fuera de zona) se reemplazan dentro de 7 días.</small>
-            <small class="note en">By submitting you agree to be contacted via WhatsApp/call/email. Invalid leads (spam/duplicates/out of area) are replaced within 7 days.</small>
-            <button type="submit"><span class="es">Enviar</span><span class="en">Send</span></button>
-          </form>
+          <form name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="lead" />
+  <p style="display:none">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <div class="grid g-2">
+    <div>
+      <label class="es">Nombre</label><label class="en">Name</label>
+      <input name="name" required />
+    </div>
+    <div>
+      <label class="es">Teléfono</label><label class="en">Phone</label>
+      <input name="phone" required />
+    </div>
+  </div>
+
+  <div class="grid g-2">
+    <div>
+      <label class="es">Email</label><label class="en">Email</label>
+      <input type="email" name="email" />
+    </div>
+    <div>
+      <label class="es">Ciudad/Zona</label><label class="en">City/Area</label>
+      <input name="area" required />
+    </div>
+  </div>
+
+  <div>
+    <label class="es">Industria</label><label class="en">Industry</label>
+    <select name="industry" required>
+      <option value="">—</option>
+      <option>Plumber</option><option>HVAC</option><option>Junk Removal</option>
+      <option>Electrician</option><option>Legal</option><option>Auto Detailing</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="es">Mensaje</label><label class="en">Message</label>
+    <textarea name="message" rows="4"></textarea>
+  </div>
+
+  <!-- UTM (las rellena tu JS existente) -->
+  <input data-utm name="utm_source" type="hidden" />
+  <input data-utm name="utm_medium" type="hidden" />
+  <input data-utm name="utm_campaign" type="hidden" />
+
+  <small class="note es">Al enviar aceptas recibir contacto por WhatsApp/llamada/email.
+    Leads inválidos (spam/duplicados/fuera de zona) se reemplazan dentro de 7 días.</small>
+  <small class="note en">By submitting you agree to be contacted via WhatsApp/call/email.
+    Invalid leads (spam/duplicates/out of area) are replaced within 7 days.</small>
+
+  <button type="submit"><span class="es">Enviar</span><span class="en">Send</span></button>
+</form>
         </div>
         <div>
           <div class="card">
